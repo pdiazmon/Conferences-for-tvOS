@@ -1,0 +1,39 @@
+PODS:
+  - AcknowList (1.8)
+  - Crashlytics (3.12.0):
+    - Fabric (~> 1.9.0)
+  - Fabric (1.9.0)
+  - Realm (3.13.1):
+    - Realm/Headers (= 3.13.1)
+  - Realm/Headers (3.13.1)
+  - RealmSwift (3.13.1):
+    - Realm (= 3.13.1)
+  - TinyConstraints (3.3.1)
+
+DEPENDENCIES:
+  - AcknowList (~> 1.7)
+  - Crashlytics
+  - Fabric
+  - RealmSwift
+  - TinyConstraints
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AcknowList
+    - Crashlytics
+    - Fabric
+    - Realm
+    - RealmSwift
+    - TinyConstraints
+
+SPEC CHECKSUMS:
+  AcknowList: 5b8820004d019d0a8d6a091ea2392dcb54bd3ad2
+  Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
+  Fabric: f988e33c97f08930a413e08123064d2e5f68d655
+  Realm: 50071da38fe079e0735e47c9f2eae738c68c5996
+  RealmSwift: 8a1e6a02b7a08cd17a31e3115143fb69fe5f3fb9
+  TinyConstraints: dbf7519aefc01ea59d62244300c7718aec68e280
+
+PODFILE CHECKSUM: c532aec3e3932f6e735e34723c93c4609cb5665a
+
+COCOAPODS: 1.6.1

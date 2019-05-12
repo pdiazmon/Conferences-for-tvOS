@@ -1,0 +1,4 @@
+framework module ConferencesCoreTV {
+  header "ConferencesCoreTV-Swift.h"
+  requires objc
+}
