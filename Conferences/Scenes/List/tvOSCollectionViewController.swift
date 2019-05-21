@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ParallaxView
 
 private let reuseIdentifier       = "Cell"
 private let headerReuseIdentifier = "Header"
@@ -16,6 +17,7 @@ class tvOSCollectionViewController: UICollectionViewController {
     var apiClient           = APIClient()
     let dataSource          = ListViewDataSource()
     private let talkService = TalkService()
+    weak var coordinator: MainCoordinator?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -109,8 +111,6 @@ class tvOSCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
         return true
     }
-    
-
 
     // Uncomment this method to specify if the specified item should be selected
     override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
@@ -119,16 +119,17 @@ class tvOSCollectionViewController: UICollectionViewController {
 
     override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
         if let prev = context.previouslyFocusedItem as? tvOSTalkViewCell {
-            UIView.animate(withDuration: 0.1) {
-                prev.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
-            }
+            prev.removeParallaxMotionEffects()
         }
-        
+
         if let next = context.nextFocusedItem as? tvOSTalkViewCell {
-            UIView.animate(withDuration: 0.1) {
-                next.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
-            }
+            next.addParallaxMotionEffects()
         }
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let talk = dataSource.conferences[indexPath.section].talks[indexPath.row]
+        coordinator?.showTalkDetails(talk: talk)
     }
     
     /*

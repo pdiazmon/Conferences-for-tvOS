@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,9 +18,16 @@
 		EB1436262288A7C400636B13 /* Styleguide.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1436242288A7C400636B13 /* Styleguide.swift */; };
 		EB14362D2288A85800636B13 /* TalkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB14362B2288A85800636B13 /* TalkService.swift */; };
 		EB14362E2288A85800636B13 /* LoggingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB14362C2288A85800636B13 /* LoggingHelper.swift */; };
-		EB440CC22288ABCD0010E060 /* ConferencesCoreTV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBA5CC372288A8AD006C4C65 /* ConferencesCoreTV.framework */; };
-		EB440CC32288ABCD0010E060 /* ConferencesCoreTV.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EBA5CC372288A8AD006C4C65 /* ConferencesCoreTV.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		EBA5CC382288A8AE006C4C65 /* ConferencesCoreTV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBA5CC372288A8AD006C4C65 /* ConferencesCoreTV.framework */; };
+		EB4A09022293416700684436 /* Pods_Conferences.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB4A09012293416700684436 /* Pods_Conferences.framework */; };
+		EB5954FB22935B1D0053922B /* ConferencesCoreTV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB5954FA22935B1D0053922B /* ConferencesCoreTV.framework */; };
+		EB5954FC22935B2E0053922B /* ConferencesCoreTV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB5954FA22935B1D0053922B /* ConferencesCoreTV.framework */; };
+		EB5954FD22935B2E0053922B /* ConferencesCoreTV.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EB5954FA22935B1D0053922B /* ConferencesCoreTV.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EB66101C2291CD3300A0957B /* YoutubeFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB66101A2291CD3300A0957B /* YoutubeFetcher.swift */; };
+		EB66101D2291CD3300A0957B /* VimeoFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB66101B2291CD3300A0957B /* VimeoFetcher.swift */; };
+		EB66101F2291CE4100A0957B /* PlaybackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB66101E2291CE4100A0957B /* PlaybackViewModel.swift */; };
+		EB6610272291D00000A0957B /* AVAsset+AsyncHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6610222291CFFF00A0957B /* AVAsset+AsyncHelpers.swift */; };
+		EB6610292291D00000A0957B /* AVPlayer+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6610242291CFFF00A0957B /* AVPlayer+Validation.swift */; };
+		EB66102A2291D00000A0957B /* String+CMTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6610252291D00000A0957B /* String+CMTime.swift */; };
 		EBDBA9E52288A8F3006B6861 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDBA9E22288A8F3006B6861 /* APIClient.swift */; };
 		EBDBA9E62288A8F3006B6861 /* APIClient+Conference.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDBA9E32288A8F3006B6861 /* APIClient+Conference.swift */; };
 		EBDBA9E72288A8F3006B6861 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDBA9E42288A8F3006B6861 /* Error.swift */; };
@@ -52,7 +59,7 @@
 		EBDBAA232288AB0B006B6861 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDBAA202288AB0B006B6861 /* UIImage.swift */; };
 		EBDBAA252288AB29006B6861 /* Suggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDBAA242288AB29006B6861 /* Suggestion.swift */; };
 		EBDBAA272288AB4C006B6861 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDBAA262288AB4B006B6861 /* SplitViewController.swift */; };
-		FAC6DDB44FB42141034C8930 /* Pods_Conferences.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA9698462A2714F48324970B /* Pods_Conferences.framework */; };
+		EBE79873228B3DE5005BCCC0 /* tvOSDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE79872228B3DE5005BCCC0 /* tvOSDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,13 +73,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		EB440CC42288ABCD0010E060 /* Embed Frameworks */ = {
+		EB4A08FE229340EC00684436 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				EB440CC32288ABCD0010E060 /* ConferencesCoreTV.framework in Embed Frameworks */,
+				EB5954FD22935B2E0053922B /* ConferencesCoreTV.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,7 +94,7 @@
 		A45843E79F0F13A1239BEADC /* Pods-ConferencesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConferencesTests.release.xcconfig"; path = "Target Support Files/Pods-ConferencesTests/Pods-ConferencesTests.release.xcconfig"; sourceTree = "<group>"; };
 		BA9698462A2714F48324970B /* Pods_Conferences.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Conferences.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB142F712288A50A00735579 /* Conferences.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conferences.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		EB142F742288A50A00735579 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EB142F742288A50A00735579 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		EB142F762288A50A00735579 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EB142F792288A50A00735579 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EB142F7B2288A50C00735579 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -96,11 +103,18 @@
 		EB142F862288A50C00735579 /* ConferencesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferencesTests.swift; sourceTree = "<group>"; };
 		EB142F882288A50C00735579 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB1436212288A73F00636B13 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
-		EB1436232288A7C300636B13 /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		EB1436232288A7C300636B13 /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		EB1436242288A7C400636B13 /* Styleguide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Styleguide.swift; sourceTree = "<group>"; };
 		EB14362B2288A85800636B13 /* TalkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalkService.swift; sourceTree = "<group>"; };
 		EB14362C2288A85800636B13 /* LoggingHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggingHelper.swift; sourceTree = "<group>"; };
-		EBA5CC372288A8AD006C4C65 /* ConferencesCoreTV.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ConferencesCoreTV.framework; sourceTree = "<group>"; };
+		EB4A09012293416700684436 /* Pods_Conferences.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Conferences.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB5954FA22935B1D0053922B /* ConferencesCoreTV.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ConferencesCoreTV.framework; sourceTree = "<group>"; };
+		EB66101A2291CD3300A0957B /* YoutubeFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeFetcher.swift; sourceTree = "<group>"; };
+		EB66101B2291CD3300A0957B /* VimeoFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VimeoFetcher.swift; sourceTree = "<group>"; };
+		EB66101E2291CE4100A0957B /* PlaybackViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaybackViewModel.swift; sourceTree = "<group>"; };
+		EB6610222291CFFF00A0957B /* AVAsset+AsyncHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVAsset+AsyncHelpers.swift"; sourceTree = "<group>"; };
+		EB6610242291CFFF00A0957B /* AVPlayer+Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVPlayer+Validation.swift"; sourceTree = "<group>"; };
+		EB6610252291D00000A0957B /* String+CMTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+CMTime.swift"; sourceTree = "<group>"; };
 		EBDBA9E22288A8F3006B6861 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		EBDBA9E32288A8F3006B6861 /* APIClient+Conference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "APIClient+Conference.swift"; sourceTree = "<group>"; };
 		EBDBA9E42288A8F3006B6861 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
@@ -121,7 +135,7 @@
 		EBDBAA0B2288AA99006B6861 /* ActionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionView.swift; sourceTree = "<group>"; };
 		EBDBAA0C2288AA99006B6861 /* SpeakerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerView.swift; sourceTree = "<group>"; };
 		EBDBAA0D2288AA99006B6861 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		EBDBAA122288AAC3006B6861 /* tvOSCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tvOSCollectionViewController.swift; sourceTree = "<group>"; };
+		EBDBAA122288AAC3006B6861 /* tvOSCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tvOSCollectionViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		EBDBAA132288AAC3006B6861 /* ListViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewDataSource.swift; sourceTree = "<group>"; };
 		EBDBAA142288AAC3006B6861 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		EBDBAA182288AAE3006B6861 /* TalkViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalkViewCell.swift; sourceTree = "<group>"; };
@@ -132,6 +146,7 @@
 		EBDBAA202288AB0B006B6861 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		EBDBAA242288AB29006B6861 /* Suggestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Suggestion.swift; sourceTree = "<group>"; };
 		EBDBAA262288AB4B006B6861 /* SplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
+		EBE79872228B3DE5005BCCC0 /* tvOSDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tvOSDetailViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,9 +154,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAC6DDB44FB42141034C8930 /* Pods_Conferences.framework in Frameworks */,
-				EB440CC22288ABCD0010E060 /* ConferencesCoreTV.framework in Frameworks */,
-				EBA5CC382288A8AE006C4C65 /* ConferencesCoreTV.framework in Frameworks */,
+				EB4A09022293416700684436 /* Pods_Conferences.framework in Frameworks */,
+				EB5954FC22935B2E0053922B /* ConferencesCoreTV.framework in Frameworks */,
+				EB5954FB22935B1D0053922B /* ConferencesCoreTV.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +205,7 @@
 		EB142F732288A50A00735579 /* Conferences */ = {
 			isa = PBXGroup;
 			children = (
+				EB6610202291CFF400A0957B /* PlayerUI */,
 				EBDBAA032288AA28006B6861 /* Scenes */,
 				EB1436272288A7F100636B13 /* Core */,
 				EB1436212288A73F00636B13 /* AppCoordinator.swift */,
@@ -216,9 +232,10 @@
 		EB1436272288A7F100636B13 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				EB5954FA22935B1D0053922B /* ConferencesCoreTV.framework */,
 				EB14362C2288A85800636B13 /* LoggingHelper.swift */,
 				EB14362B2288A85800636B13 /* TalkService.swift */,
-				EBA5CC372288A8AD006C4C65 /* ConferencesCoreTV.framework */,
+				EB6610192291CD3300A0957B /* VideoFetcher */,
 				EB14362A2288A81200636B13 /* Tag */,
 				EB1436292288A80B00636B13 /* Storage */,
 				EB1436282288A7FF00636B13 /* API */,
@@ -259,6 +276,25 @@
 			path = Tag;
 			sourceTree = "<group>";
 		};
+		EB6610192291CD3300A0957B /* VideoFetcher */ = {
+			isa = PBXGroup;
+			children = (
+				EB66101A2291CD3300A0957B /* YoutubeFetcher.swift */,
+				EB66101B2291CD3300A0957B /* VimeoFetcher.swift */,
+			);
+			path = VideoFetcher;
+			sourceTree = "<group>";
+		};
+		EB6610202291CFF400A0957B /* PlayerUI */ = {
+			isa = PBXGroup;
+			children = (
+				EB6610222291CFFF00A0957B /* AVAsset+AsyncHelpers.swift */,
+				EB6610242291CFFF00A0957B /* AVPlayer+Validation.swift */,
+				EB6610252291D00000A0957B /* String+CMTime.swift */,
+			);
+			path = PlayerUI;
+			sourceTree = "<group>";
+		};
 		EBDBA9E82288A8FD006B6861 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -275,6 +311,7 @@
 			isa = PBXGroup;
 			children = (
 				EBDBAA262288AB4B006B6861 /* SplitViewController.swift */,
+				EB66101E2291CE4100A0957B /* PlaybackViewModel.swift */,
 				EBDBAA072288AA54006B6861 /* Shared */,
 				EBDBAA052288AA44006B6861 /* List */,
 				EBDBAA042288AA32006B6861 /* Detail */,
@@ -289,6 +326,7 @@
 				EBDBAA0A2288AA99006B6861 /* DetailSummaryViewController.swift */,
 				EBDBAA0D2288AA99006B6861 /* DetailViewController.swift */,
 				EBDBAA0C2288AA99006B6861 /* SpeakerView.swift */,
+				EBE79872228B3DE5005BCCC0 /* tvOSDetailViewController.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -344,6 +382,7 @@
 		FD643CD2C8B59A6988B8FF4A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EB4A09012293416700684436 /* Pods_Conferences.framework */,
 				BA9698462A2714F48324970B /* Pods_Conferences.framework */,
 				068209ABDD460256A952ACB9 /* Pods_ConferencesTests.framework */,
 			);
@@ -362,7 +401,7 @@
 				EB142F6E2288A50A00735579 /* Frameworks */,
 				EB142F6F2288A50A00735579 /* Resources */,
 				9105A05B9B266C092EAF91C8 /* [CP] Embed Pods Frameworks */,
-				EB440CC42288ABCD0010E060 /* Embed Frameworks */,
+				EB4A08FE229340EC00684436 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -404,6 +443,11 @@
 				TargetAttributes = {
 					EB142F702288A50A00735579 = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes.appletvos = {
+								enabled = 0;
+							};
+						};
 					};
 					EB142F812288A50C00735579 = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -412,7 +456,7 @@
 				};
 			};
 			buildConfigurationList = EB142F6C2288A50A00735579 /* Build configuration list for PBXProject "Conferences" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -482,18 +526,24 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Conferences/Pods-Conferences-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AcknowList/AcknowList.framework",
+				"${BUILT_PRODUCTS_DIR}/ParallaxView/ParallaxView.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/TinyConstraints/TinyConstraints.framework",
+				"${BUILT_PRODUCTS_DIR}/XCDYouTubeKit/XCDYouTubeKit.framework",
+				"${BUILT_PRODUCTS_DIR}/YTVimeoExtractor/YTVimeoExtractor.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AcknowList.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ParallaxView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TinyConstraints.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XCDYouTubeKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YTVimeoExtractor.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -540,19 +590,24 @@
 				EBDBAA102288AA99006B6861 /* SpeakerView.swift in Sources */,
 				EBDBAA172288AAC3006B6861 /* ListViewController.swift in Sources */,
 				EBDBAA222288AB0B006B6861 /* UIView.swift in Sources */,
+				EB66101D2291CD3300A0957B /* VimeoFetcher.swift in Sources */,
 				EBDBA9E62288A8F3006B6861 /* APIClient+Conference.swift in Sources */,
 				EBDBAA252288AB29006B6861 /* Suggestion.swift in Sources */,
+				EB66102A2291D00000A0957B /* String+CMTime.swift in Sources */,
 				EB14362E2288A85800636B13 /* LoggingHelper.swift in Sources */,
 				EBDBAA112288AA99006B6861 /* DetailViewController.swift in Sources */,
 				EBDBA9EE2288A923006B6861 /* SpeakerModel.swift in Sources */,
 				EBDBA9E52288A8F3006B6861 /* APIClient.swift in Sources */,
 				EBDBAA272288AB4C006B6861 /* SplitViewController.swift in Sources */,
 				EBDBA9FC2288A963006B6861 /* Storage.swift in Sources */,
+				EBE79873228B3DE5005BCCC0 /* tvOSDetailViewController.swift in Sources */,
 				EB142F772288A50A00735579 /* ViewController.swift in Sources */,
 				EBDBAA012288A995006B6861 /* TagModel.swift in Sources */,
 				EB142F752288A50A00735579 /* AppDelegate.swift in Sources */,
 				EBDBAA1D2288AAE3006B6861 /* ConferenceHeaderView.swift in Sources */,
+				EB66101F2291CE4100A0957B /* PlaybackViewModel.swift in Sources */,
 				EBDBA9F02288A923006B6861 /* OrganisatorModel.swift in Sources */,
+				EB6610272291D00000A0957B /* AVAsset+AsyncHelpers.swift in Sources */,
 				EB1436262288A7C400636B13 /* Styleguide.swift in Sources */,
 				EBDBAA022288A995006B6861 /* SearchableProtocol.swift in Sources */,
 				EBDBA9E72288A8F3006B6861 /* Error.swift in Sources */,
@@ -563,7 +618,9 @@
 				EBDBA9EF2288A923006B6861 /* TalkModel.swift in Sources */,
 				EBDBA9FB2288A963006B6861 /* ProgressModel.swift in Sources */,
 				EBDBA9F12288A923006B6861 /* ConferenceModel.swift in Sources */,
+				EB6610292291D00000A0957B /* AVPlayer+Validation.swift in Sources */,
 				EBDBAA162288AAC3006B6861 /* ListViewDataSource.swift in Sources */,
+				EB66101C2291CD3300A0957B /* YoutubeFetcher.swift in Sources */,
 				EBDBAA232288AB0B006B6861 /* UIImage.swift in Sources */,
 				EBDBAA212288AB0B006B6861 /* StringProtocol.swift in Sources */,
 				EBDBAA1B2288AAE3006B6861 /* TalkViewCell.swift in Sources */,

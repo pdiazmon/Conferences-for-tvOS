@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import ParallaxView
 
-class tvOSTalkViewCell: UICollectionViewCell {
+//class tvOSTalkViewCell: UICollectionViewCell {
+class tvOSTalkViewCell: ParallaxCollectionViewCell {
     
     private weak var imageDownloadOperation: Operation?
     
@@ -173,6 +175,8 @@ class tvOSTalkViewCell: UICollectionViewCell {
         textStackView.leading(to: self.contentView, offset: 10)
         textStackView.trailing(to: self.contentView, offset: -10)
         textStackView.bottomToSuperview()
+
+//        parallaxEffectOptions.parallaxSubviewsContainer = thumbnailImageView
     }
     
     func configureView(with model: TalkModel) {
