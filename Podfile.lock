@@ -10,8 +10,6 @@ PODS:
   - RealmSwift (3.13.1):
     - Realm (= 3.13.1)
   - TinyConstraints (3.3.1)
-  - XCDYouTubeKit (2.7.3)
-  - YTVimeoExtractor (1.2.0)
 
 DEPENDENCIES:
   - AcknowList (~> 1.7)
@@ -20,8 +18,6 @@ DEPENDENCIES:
   - ParallaxView
   - RealmSwift
   - TinyConstraints
-  - XCDYouTubeKit (~> 2.7)
-  - YTVimeoExtractor
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -32,8 +28,6 @@ SPEC REPOS:
     - Realm
     - RealmSwift
     - TinyConstraints
-    - XCDYouTubeKit
-    - YTVimeoExtractor
 
 SPEC CHECKSUMS:
   AcknowList: 5b8820004d019d0a8d6a091ea2392dcb54bd3ad2
@@ -43,9 +37,7 @@ SPEC CHECKSUMS:
   Realm: 50071da38fe079e0735e47c9f2eae738c68c5996
   RealmSwift: 8a1e6a02b7a08cd17a31e3115143fb69fe5f3fb9
   TinyConstraints: dbf7519aefc01ea59d62244300c7718aec68e280
-  XCDYouTubeKit: 3f4fd3eb3ed494a46a8f007b91315eed6dd6df1f
-  YTVimeoExtractor: f4ed90f43e08d33d56c1d1aff3f4f64663747966
 
-PODFILE CHECKSUM: 0242b57868cddf38095947b8a051a99c39bb4c55
+PODFILE CHECKSUM: b905803cc623be724ab783fcfe2e4662e4d6b760
 
 COCOAPODS: 1.6.1

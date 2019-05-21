@@ -15,10 +15,10 @@ target 'Conferences' do
   pod 'AcknowList', '~> 1.7'
   pod 'ParallaxView'
 #  pod 'HCYoutubeParser'
-  pod 'XCDYouTubeKit', '~> 2.7'
+#  pod 'XCDYouTubeKit', '~> 2.7'
 #  pod 'GoogleAPIClient/YouTube', '~> 1.0'
 #  pod 'PlayerKit'
-  pod 'YTVimeoExtractor'
+#  pod 'YTVimeoExtractor'
 
   target 'ConferencesTests' do
     inherit! :search_paths

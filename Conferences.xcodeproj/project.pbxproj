@@ -111,7 +111,7 @@
 		EB5954FA22935B1D0053922B /* ConferencesCoreTV.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ConferencesCoreTV.framework; sourceTree = "<group>"; };
 		EB66101A2291CD3300A0957B /* YoutubeFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeFetcher.swift; sourceTree = "<group>"; };
 		EB66101B2291CD3300A0957B /* VimeoFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VimeoFetcher.swift; sourceTree = "<group>"; };
-		EB66101E2291CE4100A0957B /* PlaybackViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaybackViewModel.swift; sourceTree = "<group>"; };
+		EB66101E2291CE4100A0957B /* PlaybackViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaybackViewModel.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		EB6610222291CFFF00A0957B /* AVAsset+AsyncHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVAsset+AsyncHelpers.swift"; sourceTree = "<group>"; };
 		EB6610242291CFFF00A0957B /* AVPlayer+Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVPlayer+Validation.swift"; sourceTree = "<group>"; };
 		EB6610252291D00000A0957B /* String+CMTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+CMTime.swift"; sourceTree = "<group>"; };
@@ -530,8 +530,6 @@
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/TinyConstraints/TinyConstraints.framework",
-				"${BUILT_PRODUCTS_DIR}/XCDYouTubeKit/XCDYouTubeKit.framework",
-				"${BUILT_PRODUCTS_DIR}/YTVimeoExtractor/YTVimeoExtractor.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -542,8 +540,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TinyConstraints.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XCDYouTubeKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YTVimeoExtractor.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

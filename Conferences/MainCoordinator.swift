@@ -7,13 +7,12 @@
 //
 
 import UIKit
-import XCDYouTubeKit
 import AVKit
-import YTVimeoExtractor
 
 final class MainCoordinator {
     let tabBarController: UITabBarController
     private var navigationController: UINavigationController
+    private var playbackViewModel: PlaybackViewModel?
 
     init() {
         self.tabBarController     = UITabBarController()
@@ -46,65 +45,18 @@ final class MainCoordinator {
     }
     
     func playTalk(talk: TalkModel) {
-        if (talk.source == .youtube) {
-            playYouTubeVideo(talk: talk)
-        }
-        else if (talk.source == .vimeo) {
-            playVimeoVideo(talk: talk)
-        }
-    }
-}
+        PlaybackViewModel.getVideoUrl(talk: talk) { (url) in
+            guard let url = url else { return }
 
-extension MainCoordinator {
-    
-    private func playYouTubeVideo(talk: TalkModel) {
-        XCDYouTubeClient.default().getVideoWithIdentifier(talk.videoId) { video, error in
-            if (video != nil) {
-                let streamURLs = video?.streamURLs
-                var streamURL: URL?
+            DispatchQueue.main.async {
+                self.playbackViewModel = PlaybackViewModel(talk: talk, url: url)
                 
-                if (streamURLs?[XCDYouTubeVideoQualityHTTPLiveStreaming] != nil) { streamURL = streamURLs?[XCDYouTubeVideoQualityHTTPLiveStreaming] }
-                else if (streamURLs?[XCDYouTubeVideoQuality.HD720.rawValue] != nil) { streamURL = streamURLs?[XCDYouTubeVideoQuality.HD720.rawValue] }
-                else if (streamURLs?[XCDYouTubeVideoQuality.medium360.rawValue] != nil) { streamURL = streamURLs?[XCDYouTubeVideoQuality.medium360.rawValue] }
-                else if (streamURLs?[XCDYouTubeVideoQuality.small240.rawValue] != nil) { streamURL = streamURLs?[XCDYouTubeVideoQuality.small240.rawValue] }
+                let playerViewController = AVPlayerViewController()
+                self.navigationController.pushViewController(playerViewController, animated: true)
                 
-                if let streamURL = streamURL {
-                    self.playVideo(url: streamURL)
-                }
+                playerViewController.player = self.playbackViewModel?.player
+                playerViewController.player?.play()
             }
         }
-    }
-    
-    private func playVimeoVideo(talk: TalkModel) {
-        YTVimeoExtractor.shared().fetchVideo(withVimeoURL: talk.url, withReferer: nil) { (video:YTVimeoVideo?, error:Error?) in
-            
-            if let streamUrls = video?.streamURLs {
-                var streamURL: String?
-                var streams : [String:String] = [:]
-                
-                for (key,value) in streamUrls {
-                    streams["\(key)"] = "\(value)"
-                }
-                
-                if let large = streams["720"] { streamURL = large }
-                else if let high = streams["480"] { streamURL = high }
-                else if let medium = streams["360"] { streamURL = medium }
-                else if let low = streams["270"] { streamURL = low }
-                
-                if let url = streamURL, let videoURL = URL(string: url) {
-                    self.playVideo(url: videoURL)
-                }
-            }
-        }
-    }
-    
-    private func playVideo(url: URL) {
-        let playerViewController = AVPlayerViewController()
-
-        navigationController.pushViewController(playerViewController, animated: true)
-
-        weak var weakPlayerViewController: AVPlayerViewController? = playerViewController
-        weakPlayerViewController?.player = AVPlayer(url: url)
-        weakPlayerViewController?.player?.play()
     }
 }
