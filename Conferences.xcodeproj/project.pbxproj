@@ -45,22 +45,15 @@
 		EBDBAA002288A995006B6861 /* TagSyncService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDBA9FD2288A995006B6861 /* TagSyncService.swift */; };
 		EBDBAA012288A995006B6861 /* TagModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDBA9FE2288A995006B6861 /* TagModel.swift */; };
 		EBDBAA022288A995006B6861 /* SearchableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDBA9FF2288A995006B6861 /* SearchableProtocol.swift */; };
-		EBDBAA0E2288AA99006B6861 /* DetailSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDBAA0A2288AA99006B6861 /* DetailSummaryViewController.swift */; };
-		EBDBAA0F2288AA99006B6861 /* ActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDBAA0B2288AA99006B6861 /* ActionView.swift */; };
-		EBDBAA102288AA99006B6861 /* SpeakerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDBAA0C2288AA99006B6861 /* SpeakerView.swift */; };
-		EBDBAA112288AA99006B6861 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDBAA0D2288AA99006B6861 /* DetailViewController.swift */; };
 		EBDBAA152288AAC3006B6861 /* tvOSCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDBAA122288AAC3006B6861 /* tvOSCollectionViewController.swift */; };
 		EBDBAA162288AAC3006B6861 /* ListViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDBAA132288AAC3006B6861 /* ListViewDataSource.swift */; };
-		EBDBAA172288AAC3006B6861 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDBAA142288AAC3006B6861 /* ListViewController.swift */; };
-		EBDBAA1B2288AAE3006B6861 /* TalkViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDBAA182288AAE3006B6861 /* TalkViewCell.swift */; };
 		EBDBAA1C2288AAE3006B6861 /* tvOSTalkViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDBAA192288AAE3006B6861 /* tvOSTalkViewCell.swift */; };
 		EBDBAA1D2288AAE3006B6861 /* ConferenceHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDBAA1A2288AAE3006B6861 /* ConferenceHeaderView.swift */; };
 		EBDBAA212288AB0B006B6861 /* StringProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDBAA1E2288AB0B006B6861 /* StringProtocol.swift */; };
 		EBDBAA222288AB0B006B6861 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDBAA1F2288AB0B006B6861 /* UIView.swift */; };
 		EBDBAA232288AB0B006B6861 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDBAA202288AB0B006B6861 /* UIImage.swift */; };
-		EBDBAA252288AB29006B6861 /* Suggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDBAA242288AB29006B6861 /* Suggestion.swift */; };
-		EBDBAA272288AB4C006B6861 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDBAA262288AB4B006B6861 /* SplitViewController.swift */; };
 		EBE79873228B3DE5005BCCC0 /* tvOSDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE79872228B3DE5005BCCC0 /* tvOSDetailViewController.swift */; };
+		EBFF916D2298B22100515031 /* Suggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFF916C2298B22100515031 /* Suggestion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,22 +126,15 @@
 		EBDBA9FD2288A995006B6861 /* TagSyncService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagSyncService.swift; sourceTree = "<group>"; };
 		EBDBA9FE2288A995006B6861 /* TagModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagModel.swift; sourceTree = "<group>"; };
 		EBDBA9FF2288A995006B6861 /* SearchableProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchableProtocol.swift; sourceTree = "<group>"; };
-		EBDBAA0A2288AA99006B6861 /* DetailSummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailSummaryViewController.swift; sourceTree = "<group>"; };
-		EBDBAA0B2288AA99006B6861 /* ActionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionView.swift; sourceTree = "<group>"; };
-		EBDBAA0C2288AA99006B6861 /* SpeakerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeakerView.swift; sourceTree = "<group>"; };
-		EBDBAA0D2288AA99006B6861 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		EBDBAA122288AAC3006B6861 /* tvOSCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tvOSCollectionViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		EBDBAA132288AAC3006B6861 /* ListViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewDataSource.swift; sourceTree = "<group>"; };
-		EBDBAA142288AAC3006B6861 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
-		EBDBAA182288AAE3006B6861 /* TalkViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalkViewCell.swift; sourceTree = "<group>"; };
 		EBDBAA192288AAE3006B6861 /* tvOSTalkViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tvOSTalkViewCell.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		EBDBAA1A2288AAE3006B6861 /* ConferenceHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConferenceHeaderView.swift; sourceTree = "<group>"; };
 		EBDBAA1E2288AB0B006B6861 /* StringProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringProtocol.swift; sourceTree = "<group>"; };
 		EBDBAA1F2288AB0B006B6861 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		EBDBAA202288AB0B006B6861 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
-		EBDBAA242288AB29006B6861 /* Suggestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Suggestion.swift; sourceTree = "<group>"; };
-		EBDBAA262288AB4B006B6861 /* SplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 		EBE79872228B3DE5005BCCC0 /* tvOSDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tvOSDetailViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
+		EBFF916C2298B22100515031 /* Suggestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Suggestion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -321,7 +307,6 @@
 			isa = PBXGroup;
 			children = (
 				EBA8AAB622984B8700548C91 /* Player */,
-				EBDBAA262288AB4B006B6861 /* SplitViewController.swift */,
 				EB66101E2291CE4100A0957B /* PlaybackViewModel.swift */,
 				EBDBAA072288AA54006B6861 /* Shared */,
 				EBDBAA052288AA44006B6861 /* List */,
@@ -333,10 +318,6 @@
 		EBDBAA042288AA32006B6861 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				EBDBAA0B2288AA99006B6861 /* ActionView.swift */,
-				EBDBAA0A2288AA99006B6861 /* DetailSummaryViewController.swift */,
-				EBDBAA0D2288AA99006B6861 /* DetailViewController.swift */,
-				EBDBAA0C2288AA99006B6861 /* SpeakerView.swift */,
 				EBE79872228B3DE5005BCCC0 /* tvOSDetailViewController.swift */,
 			);
 			path = Detail;
@@ -345,7 +326,6 @@
 		EBDBAA052288AA44006B6861 /* List */ = {
 			isa = PBXGroup;
 			children = (
-				EBDBAA142288AAC3006B6861 /* ListViewController.swift */,
 				EBDBAA132288AAC3006B6861 /* ListViewDataSource.swift */,
 				EBDBAA122288AAC3006B6861 /* tvOSCollectionViewController.swift */,
 				EBDBAA062288AA4D006B6861 /* Cells */,
@@ -357,7 +337,6 @@
 			isa = PBXGroup;
 			children = (
 				EBDBAA1A2288AAE3006B6861 /* ConferenceHeaderView.swift */,
-				EBDBAA182288AAE3006B6861 /* TalkViewCell.swift */,
 				EBDBAA192288AAE3006B6861 /* tvOSTalkViewCell.swift */,
 			);
 			path = Cells;
@@ -385,7 +364,7 @@
 		EBDBAA092288AA64006B6861 /* TagView */ = {
 			isa = PBXGroup;
 			children = (
-				EBDBAA242288AB29006B6861 /* Suggestion.swift */,
+				EBFF916C2298B22100515031 /* Suggestion.swift */,
 			);
 			path = TagView;
 			sourceTree = "<group>";
@@ -594,20 +573,16 @@
 				EBDBAA152288AAC3006B6861 /* tvOSCollectionViewController.swift in Sources */,
 				EBDBAA002288A995006B6861 /* TagSyncService.swift in Sources */,
 				EBDBA9F92288A963006B6861 /* CurrentlyWatchingModel.swift in Sources */,
-				EBDBAA102288AA99006B6861 /* SpeakerView.swift in Sources */,
-				EBDBAA172288AAC3006B6861 /* ListViewController.swift in Sources */,
 				EBDBAA222288AB0B006B6861 /* UIView.swift in Sources */,
 				EB66101D2291CD3300A0957B /* VimeoFetcher.swift in Sources */,
 				EBDBA9E62288A8F3006B6861 /* APIClient+Conference.swift in Sources */,
-				EBDBAA252288AB29006B6861 /* Suggestion.swift in Sources */,
 				EB66102A2291D00000A0957B /* String+CMTime.swift in Sources */,
 				EB14362E2288A85800636B13 /* LoggingHelper.swift in Sources */,
-				EBDBAA112288AA99006B6861 /* DetailViewController.swift in Sources */,
 				EBDBA9EE2288A923006B6861 /* SpeakerModel.swift in Sources */,
 				EBDBA9E52288A8F3006B6861 /* APIClient.swift in Sources */,
-				EBDBAA272288AB4C006B6861 /* SplitViewController.swift in Sources */,
 				EBDBA9FC2288A963006B6861 /* Storage.swift in Sources */,
 				EBE79873228B3DE5005BCCC0 /* tvOSDetailViewController.swift in Sources */,
+				EBFF916D2298B22100515031 /* Suggestion.swift in Sources */,
 				EB142F772288A50A00735579 /* ViewController.swift in Sources */,
 				EBDBAA012288A995006B6861 /* TagModel.swift in Sources */,
 				EB142F752288A50A00735579 /* AppDelegate.swift in Sources */,
@@ -621,8 +596,6 @@
 				EBDBA9E72288A8F3006B6861 /* Error.swift in Sources */,
 				EB14362D2288A85800636B13 /* TalkService.swift in Sources */,
 				EBDBA9FA2288A963006B6861 /* FavoriteModel.swift in Sources */,
-				EBDBAA0F2288AA99006B6861 /* ActionView.swift in Sources */,
-				EBDBAA0E2288AA99006B6861 /* DetailSummaryViewController.swift in Sources */,
 				EBDBA9EF2288A923006B6861 /* TalkModel.swift in Sources */,
 				EBDBA9FB2288A963006B6861 /* ProgressModel.swift in Sources */,
 				EBDBA9F12288A923006B6861 /* ConferenceModel.swift in Sources */,
@@ -631,7 +604,6 @@
 				EB66101C2291CD3300A0957B /* YoutubeFetcher.swift in Sources */,
 				EBDBAA232288AB0B006B6861 /* UIImage.swift in Sources */,
 				EBDBAA212288AB0B006B6861 /* StringProtocol.swift in Sources */,
-				EBDBAA1B2288AAE3006B6861 /* TalkViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
