@@ -9,13 +9,12 @@
 import UIKit
 import ParallaxView
 
-//class tvOSTalkViewCell: UICollectionViewCell {
-class tvOSTalkViewCell: ParallaxCollectionViewCell {
-    
+class tvOSTalkViewCell: UICollectionViewCell {
+
     private weak var imageDownloadOperation: Operation?
     
-    public static let THUMB_WIDTH: CGFloat  = 267.0
-    public static let THUMB_HEIGHT: CGFloat = 150.0
+    public static let THUMB_WIDTH: CGFloat  = 305.0
+    public static let THUMB_HEIGHT: CGFloat = 255.0
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -30,19 +29,7 @@ class tvOSTalkViewCell: ParallaxCollectionViewCell {
     private lazy var colorContainer: UIView = {
         let v = UIView()
         v.width(0.7)
-        
-        return v
-    }()
-    
-    private lazy var nowPlayingImage: UIImageView = {
-        let v = UIImageView()
-        
-        //v.image = NSImage(named: "speaker")
-        v.isHidden = true
-        
-        v.height(15)
-        v.width(15)
-        
+
         return v
     }()
     
@@ -50,18 +37,13 @@ class tvOSTalkViewCell: ParallaxCollectionViewCell {
         let v = UIImageView()
         
         v.contentMode = .scaleAspectFit
-//        v.contentMode = .top
-//        v.width(85)
-        
-//        v.layer.borderColor  = UIColor.white.cgColor
-//        v.layer.borderWidth  = 3
         
         return v
     }()
     
     private lazy var titleLabel: UILabel = {
         let l = UILabel()
-        l.font = .systemFont(ofSize: 18, weight: .medium)
+        l.font = .systemFont(ofSize: 28, weight: .medium)
         l.textColor = .primaryText
         l.lineBreakMode = .byTruncatingTail
         l.numberOfLines = 1
@@ -72,58 +54,21 @@ class tvOSTalkViewCell: ParallaxCollectionViewCell {
     
     private lazy var subtitleLabel: UILabel = {
         let l = UILabel()
-        l.font = .systemFont(ofSize: 15)
+        l.font = .systemFont(ofSize: 25)
         l.textColor = .secondaryText
         l.lineBreakMode = .byTruncatingTail
         
         return l
     }()
     
-    private lazy var contextLabel: UILabel = {
-        let l = UILabel()
-        l.font = .systemFont(ofSize: 12)
-        l.textColor = .tertiaryText
-        l.lineBreakMode = .byTruncatingTail
-        
-        return l
-    }()
-    
     private lazy var textStackView: UIStackView = {
-        let v = UIStackView(arrangedSubviews: [self.titleLabel, self.subtitleLabel, self.contextLabel])
-        
+        let v = UIStackView(arrangedSubviews: [self.titleLabel, self.subtitleLabel])
+
         v.axis         = .vertical
         v.alignment    = .center
         v.distribution = .fillProportionally
         v.spacing      = 0
-        
-        return v
-    }()
-    
-    private lazy var watchtedIndicator: UIImageView = {
-        let v = UIImageView()
-        
-        v.image = UIImage(named: "watched-tick")
-        v.width(10)
-        v.height(10)
-        
-        return v
-    }()
-    
-    private lazy var progressStackView: UIStackView = {
-        let v = UIStackView(arrangedSubviews: [self.watchtedIndicator])
-        
-        v.alignment = .center
-        self.watchtedIndicator.centerY(to: v)
-        
-        return v
-    }()
-    
-    private lazy var stackView: UIStackView = {
-        let v = UIStackView(arrangedSubviews: [self.textStackView, self.progressStackView])
-        
-        v.spacing = 5
-        self.watchtedIndicator.trailing(to: v)
-        
+
         return v
     }()
     
@@ -139,21 +84,21 @@ class tvOSTalkViewCell: ParallaxCollectionViewCell {
         
     }()
     
-    lazy var imageContainer: UIStackView = {
-        let v = UIStackView(arrangedSubviews: [self.thumbnailImageView, self.progressBar])
+    lazy var imageContainer: ParallaxView = {
+        var imgc = ParallaxView()
         
-        v.backgroundColor = UIColor.red
+        imgc.addSubview(self.thumbnailImageView)
+        imgc.addSubview(self.progressBar)
         
-        v.axis         = .vertical
-        v.alignment    = .center
-        v.distribution = .fillProportionally
-        v.spacing      = 0
-
-        // TODO: ProgressBar width should be proportional to the view status
-        self.progressBar.widthToSuperview()
         self.thumbnailImageView.widthToSuperview()
+        self.thumbnailImageView.heightToSuperview()
+        self.thumbnailImageView.topToSuperview()
+        self.progressBar.width(to: self.thumbnailImageView)
+        self.progressBar.leading(to: self.thumbnailImageView)
+        self.progressBar.bottom(to: self.thumbnailImageView)
+//        self.progressBar.centerXToSuperview()
         
-        return v
+        return imgc
     }()
     
     func describe() {
@@ -161,22 +106,16 @@ class tvOSTalkViewCell: ParallaxCollectionViewCell {
     }
     
     private func configureView() {
-        contentView.addSubview(thumbnailImageView)
-        contentView.addSubview(progressBar)
+        contentView.addSubview(imageContainer)
         contentView.addSubview(textStackView)
 
-        thumbnailImageView.top(to: self.contentView, offset: 20)
-        thumbnailImageView.centerX(to: self.contentView)
-
-        progressBar.bottom(to: self.thumbnailImageView)
-        progressBar.centerX(to: self.thumbnailImageView)
-        progressBar.width(to: self.thumbnailImageView)
+        imageContainer.top(to: self.contentView, offset: 20)
+        imageContainer.centerX(to: self.contentView)
+        imageContainer.widthToSuperview()
         
         textStackView.leading(to: self.contentView, offset: 10)
         textStackView.trailing(to: self.contentView, offset: -10)
         textStackView.bottomToSuperview()
-
-//        parallaxEffectOptions.parallaxSubviewsContainer = thumbnailImageView
     }
     
     func configureView(with model: TalkModel) {
@@ -188,22 +127,22 @@ class tvOSTalkViewCell: ParallaxCollectionViewCell {
         colorContainer.backgroundColor = UIColor().hexStringToUIColor(hex: model.highlightColor)
 //
 //        //        progressView.isHidden = true
-        watchtedIndicator.isHidden = true
+//        watchtedIndicator.isHidden = true
 //        nowPlayingImage.isHidden = true
 //
-        if let progress = model.progress {
-            if model.currentlyPlaying {
-                nowPlayingImage.isHidden = false
-            }
-
-            if progress.relativePosition == 1 && progress.watched {
-                watchtedIndicator.isHidden = false
-            } else if progress.relativePosition > 0 {
+//        if let progress = model.progress {
+//            if model.currentlyPlaying {
+//                nowPlayingImage.isHidden = false
+//            }
+//
+//            if progress.relativePosition == 1 && progress.watched {
+//                watchtedIndicator.isHidden = false
+//            } else if progress.relativePosition > 0 {
 //                //                progressView.isHidden = false
 //                //                progressView.hasValidProgress = true
 //                //                progressView.progress = progress.relativePosition
-            }
-        }
+//            }
+//        }
 
 
         guard let imageUrl = URL(string: model.previewImage) else { return }
@@ -213,6 +152,8 @@ class tvOSTalkViewCell: ParallaxCollectionViewCell {
             guard url == imageUrl, thumb != nil else { return }
 
             self?.thumbnailImageView.image = thumb
+            self?.thumbnailImageView.height(tvOSTalkViewCell.THUMB_HEIGHT)
+//            self?.thumbnailImageView.width(tvOSTalkViewCell.THUMB_WIDTH)
         }
     }
     

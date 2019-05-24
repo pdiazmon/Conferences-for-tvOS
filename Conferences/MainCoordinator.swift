@@ -25,9 +25,9 @@ final class MainCoordinator {
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset        = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        layout.itemSize            = CGSize(width: tvOSTalkViewCell.THUMB_WIDTH * 1.3, height: 230)
+        layout.itemSize            = CGSize(width: tvOSTalkViewCell.THUMB_WIDTH * 1.5, height: 375)
         layout.headerReferenceSize = CGSize(width: 1000, height: 200)
-        layout.minimumLineSpacing  = 20
+        layout.minimumLineSpacing  = 50
         layout.scrollDirection     = .vertical
         
         let vc = tvOSCollectionViewController(collectionViewLayout: layout)

@@ -119,11 +119,11 @@ class tvOSCollectionViewController: UICollectionViewController {
 
     override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
         if let prev = context.previouslyFocusedItem as? tvOSTalkViewCell {
-            prev.removeParallaxMotionEffects()
+            prev.imageContainer.removeParallaxMotionEffects()
         }
 
         if let next = context.nextFocusedItem as? tvOSTalkViewCell {
-            next.addParallaxMotionEffects()
+            next.imageContainer.addParallaxMotionEffects()
         }
     }
     

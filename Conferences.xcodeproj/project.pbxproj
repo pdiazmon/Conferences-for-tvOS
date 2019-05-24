@@ -139,7 +139,7 @@
 		EBDBAA132288AAC3006B6861 /* ListViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewDataSource.swift; sourceTree = "<group>"; };
 		EBDBAA142288AAC3006B6861 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		EBDBAA182288AAE3006B6861 /* TalkViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalkViewCell.swift; sourceTree = "<group>"; };
-		EBDBAA192288AAE3006B6861 /* tvOSTalkViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tvOSTalkViewCell.swift; sourceTree = "<group>"; };
+		EBDBAA192288AAE3006B6861 /* tvOSTalkViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tvOSTalkViewCell.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		EBDBAA1A2288AAE3006B6861 /* ConferenceHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConferenceHeaderView.swift; sourceTree = "<group>"; };
 		EBDBAA1E2288AB0B006B6861 /* StringProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringProtocol.swift; sourceTree = "<group>"; };
 		EBDBAA1F2288AB0B006B6861 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };

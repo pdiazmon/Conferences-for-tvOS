@@ -13,7 +13,7 @@ class ConferenceHeaderView: UICollectionReusableView {
     private weak var imageDownloadOperation: Operation?
     private var leftSafeAreaInset: CGFloat = 0
     
-    private let LOGO_HEIGHTWIDTH: CGFloat = 120
+    private let LOGO_HEIGHTWIDTH: CGFloat = 160
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -48,7 +48,7 @@ class ConferenceHeaderView: UICollectionReusableView {
 
     private lazy var titleLabel: UILabel = {
         let l = UILabel()
-        l.font = .systemFont(ofSize: 20, weight: .semibold)
+        l.font = .systemFont(ofSize: 35, weight: .semibold)
         l.textColor = .primaryText
         l.lineBreakMode = .byTruncatingTail
         l.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
@@ -58,7 +58,7 @@ class ConferenceHeaderView: UICollectionReusableView {
 
     private lazy var subtitleLabel: UILabel = {
         let l = UILabel()
-        l.font = .systemFont(ofSize: 15)
+        l.font = .systemFont(ofSize: 30)
         l.textColor = .secondaryText
         l.lineBreakMode = .byTruncatingTail
 
@@ -67,7 +67,7 @@ class ConferenceHeaderView: UICollectionReusableView {
     
     private lazy var aboutLabel: UILabel = {
         let l = UILabel()
-        l.font = .systemFont(ofSize: 15, weight: .semibold)
+        l.font = .systemFont(ofSize: 23, weight: .semibold)
         l.textColor = .secondaryText
         
         l.lineBreakMode = .byWordWrapping
@@ -101,8 +101,6 @@ class ConferenceHeaderView: UICollectionReusableView {
         return v
     }()
 
-
-
     private lazy var stackView: UIStackView = {
         let v = UIStackView(arrangedSubviews: [self.logo, self.textStackView])
 
@@ -115,13 +113,14 @@ class ConferenceHeaderView: UICollectionReusableView {
 
     private func configureView() {
         let containerView = UIView()
-        backgroundColor = UIColor.panelBackground
-//        containerView.layer.cornerRadius = 10
+        backgroundColor = UIColor.elementBackground
         containerView.backgroundColor = UIColor.elementBackground
+        
         addSubview(containerView)
+        
         containerView.edgesToSuperview(insets: .init(top: 0, left: 0, bottom: 0, right: 0))
         containerView.addSubview(stackView)
-        stackView.edgesToSuperview(insets: .init(top: 10, left: 10, bottom: 10, right: 10))
+        stackView.edgesToSuperview(insets: .init(top: 20, left: 10, bottom: 20, right: 10))
     }
 
     func configureView(with conference: ConferenceModel) {
