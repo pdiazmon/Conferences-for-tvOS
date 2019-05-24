@@ -11,9 +11,10 @@ import UIKit
 import TinyConstraints
 
 extension UIView {
-    func updateConstraint(attribute: NSLayoutConstraint.Attribute, constant: CGFloat) {
+    func updateConstraint(attribute: NSLayoutConstraint.Attribute, constant: CGFloat, multiplier: CGFloat = 1) {
         if let constraint = (self.constraints.filter{$0.firstAttribute == attribute}.first) {
             constraint.constant = constant
+//            constraint = constraint.constraintWithMultiplier(multiplier)
         }
         else {
             switch (attribute) {
@@ -25,5 +26,23 @@ extension UIView {
                 break
             }
         }
+    }
+    
+    func updateConstraint(attribute: NSLayoutConstraint.Attribute, multiplier: CGFloat) {
+//        self.constraints.forEach { print("[\(attribute.rawValue)] - \($0.firstAttribute.rawValue) - \($0.secondAttribute.rawValue)") }
+        if let constraint = (self.constraints.filter{$0.firstAttribute == attribute}.first) {
+            let newConstraint = constraint.constraintWithMultiplier(multiplier)
+            self.removeConstraint(constraint)
+            self.addConstraint(newConstraint)
+            self.layoutIfNeeded()
+        }
+        else {
+        }
+    }
+}
+
+extension NSLayoutConstraint {
+    func constraintWithMultiplier(_ multiplier: CGFloat) -> NSLayoutConstraint {
+        return NSLayoutConstraint(item: self.firstItem, attribute: self.firstAttribute, relatedBy: self.relation, toItem: self.secondItem, attribute: self.secondAttribute, multiplier: multiplier, constant: self.constant)
     }
 }

@@ -118,7 +118,7 @@ class ConferenceHeaderView: UICollectionReusableView {
         
         addSubview(containerView)
         
-        containerView.edgesToSuperview(insets: .init(top: 0, left: 0, bottom: 0, right: 0))
+        containerView.edgesToSuperview(insets: .init(top: 30, left: 0, bottom: 20, right: 0))
         containerView.addSubview(stackView)
         stackView.edgesToSuperview(insets: .init(top: 20, left: 10, bottom: 20, right: 10))
     }

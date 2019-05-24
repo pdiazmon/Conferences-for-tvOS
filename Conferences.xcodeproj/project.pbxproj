@@ -28,6 +28,7 @@
 		EB6610272291D00000A0957B /* AVAsset+AsyncHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6610222291CFFF00A0957B /* AVAsset+AsyncHelpers.swift */; };
 		EB6610292291D00000A0957B /* AVPlayer+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6610242291CFFF00A0957B /* AVPlayer+Validation.swift */; };
 		EB66102A2291D00000A0957B /* String+CMTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6610252291D00000A0957B /* String+CMTime.swift */; };
+		EBA8AAB922984BBB00548C91 /* tvOSPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA8AAB822984BBB00548C91 /* tvOSPlayerViewController.swift */; };
 		EBDBA9E52288A8F3006B6861 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDBA9E22288A8F3006B6861 /* APIClient.swift */; };
 		EBDBA9E62288A8F3006B6861 /* APIClient+Conference.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDBA9E32288A8F3006B6861 /* APIClient+Conference.swift */; };
 		EBDBA9E72288A8F3006B6861 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDBA9E42288A8F3006B6861 /* Error.swift */; };
@@ -115,6 +116,7 @@
 		EB6610222291CFFF00A0957B /* AVAsset+AsyncHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVAsset+AsyncHelpers.swift"; sourceTree = "<group>"; };
 		EB6610242291CFFF00A0957B /* AVPlayer+Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVPlayer+Validation.swift"; sourceTree = "<group>"; };
 		EB6610252291D00000A0957B /* String+CMTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+CMTime.swift"; sourceTree = "<group>"; };
+		EBA8AAB822984BBB00548C91 /* tvOSPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tvOSPlayerViewController.swift; sourceTree = "<group>"; };
 		EBDBA9E22288A8F3006B6861 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		EBDBA9E32288A8F3006B6861 /* APIClient+Conference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "APIClient+Conference.swift"; sourceTree = "<group>"; };
 		EBDBA9E42288A8F3006B6861 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
@@ -295,6 +297,14 @@
 			path = PlayerUI;
 			sourceTree = "<group>";
 		};
+		EBA8AAB622984B8700548C91 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				EBA8AAB822984BBB00548C91 /* tvOSPlayerViewController.swift */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
 		EBDBA9E82288A8FD006B6861 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,6 +320,7 @@
 		EBDBAA032288AA28006B6861 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				EBA8AAB622984B8700548C91 /* Player */,
 				EBDBAA262288AB4B006B6861 /* SplitViewController.swift */,
 				EB66101E2291CE4100A0957B /* PlaybackViewModel.swift */,
 				EBDBAA072288AA54006B6861 /* Shared */,
@@ -606,6 +617,7 @@
 				EB6610272291D00000A0957B /* AVAsset+AsyncHelpers.swift in Sources */,
 				EB1436262288A7C400636B13 /* Styleguide.swift in Sources */,
 				EBDBAA022288A995006B6861 /* SearchableProtocol.swift in Sources */,
+				EBA8AAB922984BBB00548C91 /* tvOSPlayerViewController.swift in Sources */,
 				EBDBA9E72288A8F3006B6861 /* Error.swift in Sources */,
 				EB14362D2288A85800636B13 /* TalkService.swift in Sources */,
 				EBDBA9FA2288A963006B6861 /* FavoriteModel.swift in Sources */,

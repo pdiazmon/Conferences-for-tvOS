@@ -13,6 +13,9 @@ final class MainCoordinator {
     let tabBarController: UITabBarController
     private var navigationController: UINavigationController
     private var playbackViewModel: PlaybackViewModel?
+    private var vcList: tvOSCollectionViewController!
+    private var vcDetail: tvOSDetailViewController!
+    private var vcPlayer: tvOSPlayerViewController!
 
     init() {
         self.tabBarController     = UITabBarController()
@@ -26,22 +29,26 @@ final class MainCoordinator {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset        = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         layout.itemSize            = CGSize(width: tvOSTalkViewCell.THUMB_WIDTH * 1.5, height: 375)
-        layout.headerReferenceSize = CGSize(width: 1000, height: 200)
+        layout.headerReferenceSize = CGSize(width: 1000, height: 250)
         layout.minimumLineSpacing  = 50
         layout.scrollDirection     = .vertical
         
-        let vc = tvOSCollectionViewController(collectionViewLayout: layout)
-        vc.coordinator = self
-        self.navigationController.setViewControllers([vc], animated: true)
+        vcList = tvOSCollectionViewController(collectionViewLayout: layout)
+        vcList.coordinator = self
+        self.navigationController.setViewControllers([vcList], animated: true)
         
         self.tabBarController.setViewControllers([navigationController], animated: false)
+        
+        vcDetail = tvOSDetailViewController()
+        vcDetail.coordinator = self
+        
+        vcPlayer = tvOSPlayerViewController()
+        vcPlayer.coordinator = self
     }
     
     func showTalkDetails(talk: TalkModel) {
-        let vc = tvOSDetailViewController()
-        vc.render(talk: talk)
-        vc.coordinator = self
-        navigationController.pushViewController(vc, animated: true)
+        vcDetail?.render(talk: talk)
+        navigationController.pushViewController(vcDetail, animated: true)
     }
     
     func playTalk(talk: TalkModel) {
@@ -51,12 +58,18 @@ final class MainCoordinator {
             DispatchQueue.main.async {
                 self.playbackViewModel = PlaybackViewModel(talk: talk, url: url)
                 
-                let playerViewController = AVPlayerViewController()
-                self.navigationController.pushViewController(playerViewController, animated: true)
+                self.navigationController.pushViewController(self.vcPlayer, animated: true)
                 
-                playerViewController.player = self.playbackViewModel?.player
-                playerViewController.player?.play()
+                self.vcPlayer.player = self.playbackViewModel?.player
+                self.vcPlayer.player?.play()
             }
         }
     }
 }
+
+extension MainCoordinator {
+    func reloadCollection() {
+        vcList.reloadTableView()
+    }
+}
+

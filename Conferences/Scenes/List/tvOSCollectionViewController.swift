@@ -36,6 +36,8 @@ class tvOSCollectionViewController: UICollectionViewController {
         self.collectionView?.register(ConferenceHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerReuseIdentifier)
 
         self.view.backgroundColor = .elementBackground
+        
+        self.collectionView.contentInset = UIEdgeInsets(top: 0, left: 40, bottom: 0, right: 40)
     }
     
     private func listenForRefreshActiveCell() {
@@ -119,11 +121,11 @@ class tvOSCollectionViewController: UICollectionViewController {
 
     override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
         if let prev = context.previouslyFocusedItem as? tvOSTalkViewCell {
-            prev.imageContainer.removeParallaxMotionEffects()
+            prev.setFocusOff()
         }
 
         if let next = context.nextFocusedItem as? tvOSTalkViewCell {
-            next.imageContainer.addParallaxMotionEffects()
+            next.setFocusOn()
         }
     }
     
@@ -152,7 +154,7 @@ class tvOSCollectionViewController: UICollectionViewController {
 extension tvOSCollectionViewController: ListViewDataSourceDelegate {
     func didSelectTalk(_ talk: TalkModel) {
 //        self.splitDelegate?.didSelectTalk(talk: talk)
-        print(talk.title)
+//        print(talk.title)
     }
     
     func reload() {

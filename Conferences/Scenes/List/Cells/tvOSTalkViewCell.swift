@@ -16,6 +16,8 @@ class tvOSTalkViewCell: UICollectionViewCell {
     public static let THUMB_WIDTH: CGFloat  = 305.0
     public static let THUMB_HEIGHT: CGFloat = 255.0
     
+    private var pbWidthConstraint: NSLayoutConstraint?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -78,7 +80,7 @@ class tvOSTalkViewCell: UICollectionViewCell {
         bar.backgroundColor = UIColor.orange
         
         bar.layer.cornerRadius = 5
-        bar.height(7.5)
+        bar.height(8.5)
         
         return bar
         
@@ -90,13 +92,16 @@ class tvOSTalkViewCell: UICollectionViewCell {
         imgc.addSubview(self.thumbnailImageView)
         imgc.addSubview(self.progressBar)
         
-        self.thumbnailImageView.widthToSuperview()
-        self.thumbnailImageView.heightToSuperview()
-        self.thumbnailImageView.topToSuperview()
-        self.progressBar.width(to: self.thumbnailImageView)
+        self.thumbnailImageView.edgesToSuperview()
+
         self.progressBar.leading(to: self.thumbnailImageView)
         self.progressBar.bottom(to: self.thumbnailImageView)
-//        self.progressBar.centerXToSuperview()
+        
+        imgc.parallaxEffectOptions.glowAlpha = 0.4
+        imgc.parallaxEffectOptions.shadowPanDeviation = 10
+        imgc.parallaxEffectOptions.parallaxMotionEffect.viewingAngleX = CGFloat(Double.pi/4/30)
+        imgc.parallaxEffectOptions.parallaxMotionEffect.viewingAngleY = CGFloat(Double.pi/4/30)
+        imgc.parallaxEffectOptions.parallaxMotionEffect.panValue = CGFloat(30)
         
         return imgc
     }()
@@ -116,6 +121,7 @@ class tvOSTalkViewCell: UICollectionViewCell {
         textStackView.leading(to: self.contentView, offset: 10)
         textStackView.trailing(to: self.contentView, offset: -10)
         textStackView.bottomToSuperview()
+        
     }
     
     func configureView(with model: TalkModel) {
@@ -125,26 +131,9 @@ class tvOSTalkViewCell: UICollectionViewCell {
 //        contextLabel.text = model.tags.filter { !$0.contains("2019") && !$0.contains("2018") && !$0.contains("2017") && !$0.contains("2016")}.joined(separator: " • ")
 
         colorContainer.backgroundColor = UIColor().hexStringToUIColor(hex: model.highlightColor)
-//
-//        //        progressView.isHidden = true
-//        watchtedIndicator.isHidden = true
-//        nowPlayingImage.isHidden = true
-//
-//        if let progress = model.progress {
-//            if model.currentlyPlaying {
-//                nowPlayingImage.isHidden = false
-//            }
-//
-//            if progress.relativePosition == 1 && progress.watched {
-//                watchtedIndicator.isHidden = false
-//            } else if progress.relativePosition > 0 {
-//                //                progressView.isHidden = false
-//                //                progressView.hasValidProgress = true
-//                //                progressView.progress = progress.relativePosition
-//            }
-//        }
-
-
+        
+        setProgressBarPosition(model)
+        
         guard let imageUrl = URL(string: model.previewImage) else { return }
         self.imageDownloadOperation?.cancel()
 
@@ -153,8 +142,30 @@ class tvOSTalkViewCell: UICollectionViewCell {
 
             self?.thumbnailImageView.image = thumb
             self?.thumbnailImageView.height(tvOSTalkViewCell.THUMB_HEIGHT)
-//            self?.thumbnailImageView.width(tvOSTalkViewCell.THUMB_WIDTH)
         }
     }
+    
+    private func setProgressBarPosition(_ talk: TalkModel) {
+        let playbackPosition = CGFloat(talk.progress?.relativePosition ?? 0)
+
+        if let constraint = self.pbWidthConstraint {
+            constraint.isActive = false
+            progressBar.removeConstraint(constraint)
+        }
+        
+        self.pbWidthConstraint = progressBar.widthToSuperview(multiplier: playbackPosition)
+    }
+    
+    func setFocusOn() {
+        imageContainer.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+        imageContainer.addParallaxMotionEffects()
+    }
+    
+    func setFocusOff() {
+        imageContainer.transform = CGAffineTransform(scaleX: 1, y: 1)
+        imageContainer.removeParallaxMotionEffects()
+    }
+    
+    
     
 }
