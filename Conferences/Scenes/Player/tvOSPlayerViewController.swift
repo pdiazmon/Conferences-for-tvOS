@@ -11,7 +11,7 @@ import AVKit
 
 class tvOSPlayerViewController: AVPlayerViewController, AVPlayerViewControllerDelegate {
 
-    var coordinator: MainCoordinator?
+    weak var coordinator: MainCoordinator?
     
     override func viewDidLoad() {
         super.viewDidLoad()

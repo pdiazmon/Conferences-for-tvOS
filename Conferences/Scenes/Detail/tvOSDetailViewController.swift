@@ -11,7 +11,7 @@ import ParallaxView
 
 class tvOSDetailViewController: UIViewController {
   
-    var coordinator: MainCoordinator?
+    weak var coordinator: MainCoordinator?
     private var currentTalk: TalkModel?
     
     private weak var profileImageDownloadOperation: Operation?
@@ -270,7 +270,6 @@ extension tvOSDetailViewController {
     @objc func didSelectPlay() {
         guard let talk = self.currentTalk else { return }
         
-//        self.coordinator?.playTalk(talk: talk, viewController: self)
       self.coordinator?.playTalk(talk: talk)
     }
 }
