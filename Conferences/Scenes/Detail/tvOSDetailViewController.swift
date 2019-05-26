@@ -231,11 +231,17 @@ class tvOSDetailViewController: UIViewController {
         
         calculateImagesSizes()
         
-        self.talkTitle.text      = talk.title
-        self.talkDetails.text    = talk.details
-        self.profileName.text    = talk.speaker.firstname + " " + talk.speaker.lastname
-        self.twitterAccount.text = "@" + (talk.speaker.twitter ?? "")
-        self.profileAbout.text   = talk.speaker.about
+        DispatchQueue.main.async { [weak self] in
+            self?.talkTitle.text      = talk.title
+            self?.talkDetails.text    = talk.details
+            self?.profileName.text    = talk.speaker.firstname + " " + talk.speaker.lastname
+            if let twitter = talk.speaker.twitter {
+                if (twitter.count > 0) {
+                    self?.twitterAccount.text = "@" + twitter
+                }
+            }
+            self?.profileAbout.text = talk.speaker.about
+        }
       
         guard let profileImageUrl = URL(string: talk.speaker.image) else { return }
         self.profileImageDownloadOperation?.cancel()
@@ -243,7 +249,9 @@ class tvOSDetailViewController: UIViewController {
         self.profileImageDownloadOperation = ImageDownloadCenter.shared.downloadImage(from: profileImageUrl, thumbnailHeight: PROFILEIMG_HEIGHTWIDTH) { [weak self] url, _, img in
             guard url == profileImageUrl, img != nil else { return }
 
-            self?.profilePicture.image = img?.resized(toWidth: self?.PROFILEIMG_HEIGHTWIDTH ?? 0)
+            DispatchQueue.main.async { [weak self] in
+                self?.profilePicture.image = img?.resized(toWidth: self?.PROFILEIMG_HEIGHTWIDTH ?? 0)
+            }
         }
 
         guard let thumbnailImageUrl = URL(string: talk.previewImage) else { return }
@@ -252,7 +260,9 @@ class tvOSDetailViewController: UIViewController {
         self.thumbnailImageDownloadOperation = ImageDownloadCenter.shared.downloadImage(from: thumbnailImageUrl, thumbnailHeight: THUMB_WIDTH) { [weak self] url, _, img in
             guard url == thumbnailImageUrl, img != nil else { return }
             
-            self?.thumbnailImageView.image = img?.resized(toWidth: self?.THUMB_WIDTH ?? 0)
+            DispatchQueue.main.async { [weak self] in
+                self?.thumbnailImageView.image = img?.resized(toWidth: self?.THUMB_WIDTH ?? 0)
+            }
         }
     }
     
@@ -315,17 +325,7 @@ extension tvOSDetailViewController {
         buttonParallaxEffectOptions = ParallaxEffectOptions(glowContainerView: customGlowContainer)
         
         // Add gray background color to make glow effect be more visible
-        playButton.setBackgroundImage(getImageWithColor(UIColor.lightGray, size: playButton.bounds.size), for: UIControl.State())
+        playButton.setBackgroundImage(UIColor.lightGray.getImageWithColor(size: playButton.bounds.size), for: UIControl.State())
     }
 
-    
-    func getImageWithColor(_ color: UIColor, size: CGSize) -> UIImage {
-        let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
-        UIGraphicsBeginImageContextWithOptions(size, false, 0)
-        color.setFill()
-        UIRectFill(rect)
-        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-        UIGraphicsEndImageContext()
-        return image
-    }
 }

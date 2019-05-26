@@ -17,8 +17,6 @@ class ListViewDataSource: NSObject {
     
     weak var delegate: ListViewDataSourceDelegate?
 
-//    var conferences: [ConferenceModel] = []
-    
     var conferences: [ConferenceModel] = [] {
         didSet {
             DispatchQueue.main.async {

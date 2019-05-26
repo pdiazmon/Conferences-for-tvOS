@@ -54,6 +54,7 @@
 		EBDBAA232288AB0B006B6861 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDBAA202288AB0B006B6861 /* UIImage.swift */; };
 		EBE79873228B3DE5005BCCC0 /* tvOSDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE79872228B3DE5005BCCC0 /* tvOSDetailViewController.swift */; };
 		EBFF916D2298B22100515031 /* Suggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFF916C2298B22100515031 /* Suggestion.swift */; };
+		EBFF916F2298B3F800515031 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFF916E2298B3F800515031 /* UIColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +136,7 @@
 		EBDBAA202288AB0B006B6861 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		EBE79872228B3DE5005BCCC0 /* tvOSDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tvOSDetailViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		EBFF916C2298B22100515031 /* Suggestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Suggestion.swift; sourceTree = "<group>"; };
+		EBFF916E2298B3F800515031 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -307,7 +309,6 @@
 			isa = PBXGroup;
 			children = (
 				EBA8AAB622984B8700548C91 /* Player */,
-				EB66101E2291CE4100A0957B /* PlaybackViewModel.swift */,
 				EBDBAA072288AA54006B6861 /* Shared */,
 				EBDBAA052288AA44006B6861 /* List */,
 				EBDBAA042288AA32006B6861 /* Detail */,
@@ -345,6 +346,7 @@
 		EBDBAA072288AA54006B6861 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				EB66101E2291CE4100A0957B /* PlaybackViewModel.swift */,
 				EBDBAA092288AA64006B6861 /* TagView */,
 				EBDBAA082288AA5D006B6861 /* Extensions */,
 			);
@@ -357,6 +359,7 @@
 				EBDBAA1E2288AB0B006B6861 /* StringProtocol.swift */,
 				EBDBAA202288AB0B006B6861 /* UIImage.swift */,
 				EBDBAA1F2288AB0B006B6861 /* UIView.swift */,
+				EBFF916E2298B3F800515031 /* UIColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -594,6 +597,7 @@
 				EBDBAA022288A995006B6861 /* SearchableProtocol.swift in Sources */,
 				EBA8AAB922984BBB00548C91 /* tvOSPlayerViewController.swift in Sources */,
 				EBDBA9E72288A8F3006B6861 /* Error.swift in Sources */,
+				EBFF916F2298B3F800515031 /* UIColor.swift in Sources */,
 				EB14362D2288A85800636B13 /* TalkService.swift in Sources */,
 				EBDBA9FA2288A963006B6861 /* FavoriteModel.swift in Sources */,
 				EBDBA9EF2288A923006B6861 /* TalkModel.swift in Sources */,
