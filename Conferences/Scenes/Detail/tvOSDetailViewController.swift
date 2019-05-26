@@ -286,15 +286,21 @@ class tvOSDetailViewController: UIViewController {
         
         calculateImagesSizes()
         
-        self.talkTitle.text      = talk.title
-        self.talkDetails.text    = talk.details
-        self.profileName.text    = talk.speaker.firstname + " " + talk.speaker.lastname
-        self.twitterAccount.text = "@" + (talk.speaker.twitter ?? "")
-        self.profileAbout.text   = talk.speaker.about
-        
-        playButton.setImage(getButtonImage(named: "play"), for: .normal)
-        watchlistButton.setImage(watchlistImage(), for: .normal)
-        watchButton.setImage(watchImage(), for: .normal)
+        DispatchQueue.main.async { [weak self] in
+            self?.talkTitle.text      = talk.title
+            self?.talkDetails.text    = talk.details
+            self?.profileName.text    = talk.speaker.firstname + " " + talk.speaker.lastname
+            if let twitter = talk.speaker.twitter {
+                if (twitter.count > 0) {
+                    self?.twitterAccount.text = "@" + twitter
+                }
+            }
+            self?.profileAbout.text = talk.speaker.about
+
+            self?.playButton.setImage(self?.getButtonImage(named: "play"), for: .normal)
+            self?.watchlistButton.setImage(self?.watchlistImage(), for: .normal)
+            self?.watchButton.setImage(self?.watchImage(), for: .normal)
+        }
       
         guard let profileImageUrl = URL(string: talk.speaker.image) else { return }
         self.profileImageDownloadOperation?.cancel()
@@ -302,7 +308,9 @@ class tvOSDetailViewController: UIViewController {
         self.profileImageDownloadOperation = ImageDownloadCenter.shared.downloadImage(from: profileImageUrl, thumbnailHeight: PROFILEIMG_HEIGHTWIDTH) { [weak self] url, _, img in
             guard url == profileImageUrl, img != nil else { return }
 
-            self?.profilePicture.image = img?.resized(toWidth: self?.PROFILEIMG_HEIGHTWIDTH ?? 0)
+            DispatchQueue.main.async { [weak self] in
+                self?.profilePicture.image = img?.resized(toWidth: self?.PROFILEIMG_HEIGHTWIDTH ?? 0)
+            }
         }
 
         guard let thumbnailImageUrl = URL(string: talk.previewImage) else { return }
@@ -311,7 +319,9 @@ class tvOSDetailViewController: UIViewController {
         self.thumbnailImageDownloadOperation = ImageDownloadCenter.shared.downloadImage(from: thumbnailImageUrl, thumbnailHeight: THUMB_WIDTH) { [weak self] url, _, img in
             guard url == thumbnailImageUrl, img != nil else { return }
             
-            self?.thumbnailImageView.image = img?.resized(toWidth: self?.THUMB_WIDTH ?? 0)
+            DispatchQueue.main.async { [weak self] in
+                self?.thumbnailImageView.image = img?.resized(toWidth: self?.THUMB_WIDTH ?? 0)
+            }
         }
     }
     

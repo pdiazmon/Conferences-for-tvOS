@@ -125,14 +125,16 @@ class tvOSTalkViewCell: UICollectionViewCell {
     }
     
     func configureView(with model: TalkModel) {
-        titleLabel.text = model.title
+        DispatchQueue.main.async { [weak self] in
+            self?.titleLabel.text = model.title
 
-        subtitleLabel.text = "\(model.speaker.firstname) \(model.speaker.lastname)"
+            self?.subtitleLabel.text = "\(model.speaker.firstname) \(model.speaker.lastname)"
 //        contextLabel.text = model.tags.filter { !$0.contains("2019") && !$0.contains("2018") && !$0.contains("2017") && !$0.contains("2016")}.joined(separator: " • ")
 
-        colorContainer.backgroundColor = UIColor().hexStringToUIColor(hex: model.highlightColor)
+            self?.colorContainer.backgroundColor = UIColor().hexStringToUIColor(hex: model.highlightColor)
         
-        setProgressBarPosition(model)
+            self?.setProgressBarPosition(model)
+        }
         
         guard let imageUrl = URL(string: model.previewImage) else { return }
         self.imageDownloadOperation?.cancel()
@@ -140,8 +142,10 @@ class tvOSTalkViewCell: UICollectionViewCell {
         self.imageDownloadOperation = ImageDownloadCenter.shared.downloadImage(from: imageUrl, thumbnailHeight: tvOSTalkViewCell.THUMB_HEIGHT) { [weak self] url, _, thumb in
             guard url == imageUrl, thumb != nil else { return }
 
-            self?.thumbnailImageView.image = thumb
-            self?.thumbnailImageView.height(tvOSTalkViewCell.THUMB_HEIGHT)
+            DispatchQueue.main.async { [weak self] in
+                self?.thumbnailImageView.image = thumb
+                self?.thumbnailImageView.height(tvOSTalkViewCell.THUMB_HEIGHT)
+            }
         }
     }
     
@@ -157,13 +161,17 @@ class tvOSTalkViewCell: UICollectionViewCell {
     }
     
     func setFocusOn() {
-        imageContainer.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
-        imageContainer.addParallaxMotionEffects()
+        DispatchQueue.main.async { [weak self] in
+            self?.imageContainer.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+            self?.imageContainer.addParallaxMotionEffects()
+        }
     }
     
     func setFocusOff() {
-        imageContainer.transform = CGAffineTransform(scaleX: 1, y: 1)
-        imageContainer.removeParallaxMotionEffects()
+        DispatchQueue.main.async { [weak self] in
+            self?.imageContainer.transform = CGAffineTransform(scaleX: 1, y: 1)
+            self?.imageContainer.removeParallaxMotionEffects()
+        }
     }
     
     
