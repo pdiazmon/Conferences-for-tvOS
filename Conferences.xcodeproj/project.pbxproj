@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C6739BF09C79183DC2794478 /* Pods_ConferencesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 068209ABDD460256A952ACB9 /* Pods_ConferencesTests.framework */; };
+		EB01FE67229C6387005436F2 /* TalkPlayOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB01FE66229C6387005436F2 /* TalkPlayOptionsViewController.swift */; };
 		EB142F752288A50A00735579 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB142F742288A50A00735579 /* AppDelegate.swift */; };
 		EB142F772288A50A00735579 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB142F762288A50A00735579 /* ViewController.swift */; };
 		EB142F7A2288A50A00735579 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB142F782288A50A00735579 /* Main.storyboard */; };
@@ -88,6 +89,7 @@
 		739BD7FFC2AE6EAD6CC2A593 /* Pods-Conferences.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Conferences.release.xcconfig"; path = "Target Support Files/Pods-Conferences/Pods-Conferences.release.xcconfig"; sourceTree = "<group>"; };
 		A45843E79F0F13A1239BEADC /* Pods-ConferencesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConferencesTests.release.xcconfig"; path = "Target Support Files/Pods-ConferencesTests/Pods-ConferencesTests.release.xcconfig"; sourceTree = "<group>"; };
 		BA9698462A2714F48324970B /* Pods_Conferences.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Conferences.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB01FE66229C6387005436F2 /* TalkPlayOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkPlayOptionsViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		EB142F712288A50A00735579 /* Conferences.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Conferences.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB142F742288A50A00735579 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		EB142F762288A50A00735579 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -320,6 +322,7 @@
 			isa = PBXGroup;
 			children = (
 				EBE79872228B3DE5005BCCC0 /* tvOSDetailViewController.swift */,
+				EB01FE66229C6387005436F2 /* TalkPlayOptionsViewController.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -572,6 +575,7 @@
 				EB1436222288A74000636B13 /* AppCoordinator.swift in Sources */,
 				EB1436252288A7C400636B13 /* MainCoordinator.swift in Sources */,
 				EBDBA9F22288A923006B6861 /* VideoSourceModel.swift in Sources */,
+				EB01FE67229C6387005436F2 /* TalkPlayOptionsViewController.swift in Sources */,
 				EBDBAA1C2288AAE3006B6861 /* tvOSTalkViewCell.swift in Sources */,
 				EBDBAA152288AAC3006B6861 /* tvOSCollectionViewController.swift in Sources */,
 				EBDBAA002288A995006B6861 /* TagSyncService.swift in Sources */,
@@ -759,8 +763,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 718AD4728FDF8B32800395F1 /* Pods-Conferences.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "Brand Assets";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Launch Image";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S3P397D556;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -783,8 +787,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 739BD7FFC2AE6EAD6CC2A593 /* Pods-Conferences.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "Brand Assets";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Launch Image";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S3P397D556;
 				FRAMEWORK_SEARCH_PATHS = (

@@ -26,7 +26,7 @@ class tvOSDetailViewController: UIViewController {
     private lazy var talkTitle: UILabel = {
         var title = UILabel()
       
-        title.font          = .systemFont(ofSize: 35, weight: .bold)
+        title.font          = .systemFont(ofSize: 40, weight: .bold)
         title.textColor     = .primaryText
         title.lineBreakMode = .byTruncatingTail
         title.numberOfLines = 1
@@ -38,7 +38,7 @@ class tvOSDetailViewController: UIViewController {
     private lazy var talkDetails: UILabel = {
         var details = UILabel()
       
-        details.font          = .systemFont(ofSize: 23, weight: .medium)
+        details.font          = .systemFont(ofSize: 28, weight: .medium)
         details.textColor     = .secondaryText
         details.lineBreakMode = .byTruncatingTail
         details.numberOfLines = 0
@@ -68,7 +68,6 @@ class tvOSDetailViewController: UIViewController {
         var stack = UIStackView(arrangedSubviews: [stackTalkTitle, thumbnailImageView])
         
         thumbnailImageView.trailingToSuperview()
-//        thumbnailImageView.topToSuperview(offset: 20)
         
         stack.axis      = .horizontal
         stack.spacing   = 20
@@ -102,7 +101,7 @@ class tvOSDetailViewController: UIViewController {
     private lazy var profileName: UILabel = {
         var name = UILabel()
       
-        name.font          = .systemFont(ofSize: 27, weight: .medium)
+        name.font          = .systemFont(ofSize: 35, weight: .medium)
         name.textColor     = .primaryText
         name.lineBreakMode = .byTruncatingTail
         name.numberOfLines = 1
@@ -114,7 +113,7 @@ class tvOSDetailViewController: UIViewController {
     private lazy var twitterAccount: UILabel = {
         var twitter = UILabel()
       
-        twitter.font          = .systemFont(ofSize: 26, weight: .medium)
+        twitter.font          = .systemFont(ofSize: 30, weight: .medium)
         twitter.textColor     = .tertiaryText
         twitter.lineBreakMode = .byTruncatingTail
         twitter.numberOfLines = 1
@@ -125,7 +124,7 @@ class tvOSDetailViewController: UIViewController {
     private lazy var profileAbout: UILabel = {
         var about = UILabel()
       
-        about.font          = .systemFont(ofSize: 23, weight: .medium)
+        about.font          = .systemFont(ofSize: 28, weight: .medium)
         about.textColor     = .secondaryText
         about.lineBreakMode = .byTruncatingTail
         about.numberOfLines = 0
@@ -275,7 +274,7 @@ class tvOSDetailViewController: UIViewController {
         self.stackButtons.topToBottom(of: line2, offset: 30)
         self.stackButtons.leading(to: line2)
         
-        self.tooltipLabel.bottomToSuperview(offset: -10)
+        self.tooltipLabel.bottomToSuperview(offset: -15)
         self.tooltipLabel.centerXToSuperview()
         self.tooltipLabel.widthToSuperview()
     }
@@ -290,10 +289,8 @@ class tvOSDetailViewController: UIViewController {
             self?.talkTitle.text      = talk.title
             self?.talkDetails.text    = talk.details
             self?.profileName.text    = talk.speaker.firstname + " " + talk.speaker.lastname
-            if let twitter = talk.speaker.twitter {
-                if (twitter.count > 0) {
-                    self?.twitterAccount.text = "@" + twitter
-                }
+            if let twitter = talk.speaker.twitter, !(twitter.isEmpty) {
+                self?.twitterAccount.text = "@" + twitter
             }
             self?.profileAbout.text = talk.speaker.about
 
@@ -328,7 +325,7 @@ class tvOSDetailViewController: UIViewController {
     private func calculateImagesSizes() {
         guard (THUMB_WIDTH == 0 || PROFILEIMG_HEIGHTWIDTH == 0) else { return }
         
-        THUMB_WIDTH            = self.view.bounds.width * 0.18
+        THUMB_WIDTH            = self.view.bounds.width * 0.25
         PROFILEIMG_HEIGHTWIDTH = self.view.bounds.width * 0.07
     }
 
@@ -349,7 +346,7 @@ extension tvOSDetailViewController {
                 }
             }
 
-            if let next = context.nextFocusedView as? UIButton {
+            if let next = (context.nextFocusedView as? UIButton) {
                 if (next.isDescendant(of: self.stackButtons)) {
                     next.addParallaxMotionEffects()
                     next.layer.borderWidth = 3
@@ -369,7 +366,7 @@ extension tvOSDetailViewController {
     @objc func didSelectPlay() {
         guard let talk = self.currentTalk else { return }
         
-        self.coordinator?.playTalk(talk: talk)
+        coordinator?.playTalk(talk: talk)        
     }
     
     @objc private func didSelectWatchlist() {

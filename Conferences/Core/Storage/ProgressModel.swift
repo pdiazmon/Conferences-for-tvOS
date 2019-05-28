@@ -17,4 +17,11 @@ class ProgressModel: Object {
     override static func primaryKey() -> String? {
         return "id"
     }
+    
+    func currentPositionToHoursMinutesSeconds () -> String {
+        let hours = Int(currentPosition) / 3600
+        let minutes = Int(currentPosition) / 60 % 60
+        let seconds = Int(currentPosition) % 60
+        return (hours > 0 ? String(format:"%02i:", hours) : "") + String(format:"%02i:%02i", minutes, seconds)
+    }
 }

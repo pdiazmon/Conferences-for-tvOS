@@ -106,6 +106,13 @@ extension TalkModel {
 
         Storage.shared.trackProgress(object: model)
     }
+    
+    func initializeProgress() {
+        self.trackProgress(currentPosition: 0, relativePosition: 0)
+        
+//        var tag = TagModel(title: "Continue watching", query: "realm_continue", isActive: true)
+//        TagSyncService.shared.handleStoredTag(&tag)
+    }
 }
 
 extension TalkModel {

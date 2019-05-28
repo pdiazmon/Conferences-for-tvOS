@@ -67,7 +67,7 @@ class ConferenceHeaderView: UICollectionReusableView {
     
     private lazy var aboutLabel: UILabel = {
         let l = UILabel()
-        l.font = .systemFont(ofSize: 23, weight: .semibold)
+        l.font = .systemFont(ofSize: 25, weight: .semibold)
         l.textColor = .secondaryText
         
         l.lineBreakMode = .byWordWrapping
