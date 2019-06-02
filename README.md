@@ -41,7 +41,7 @@ If you encounter any bugs please create an issue [here](https://github.com/zagah
 <br>
 
 ## Requirements
-**Conferences** is written in Swift 5. Compatible with iOS 11.4+ <br>
+**Conferences** is written in Swift 5. Compatible with tvOS 12.2+ <br>
 
 <br>
 
