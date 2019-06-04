@@ -11,7 +11,7 @@ import ParallaxView
 
 class tvOSDetailViewController: UIViewController {
   
-    weak var coordinator: MainCoordinator?
+    weak var coordinator: ConferencesCoordinator?
     private var currentTalk: TalkModel?
     
     private weak var profileImageDownloadOperation: Operation?
@@ -379,6 +379,8 @@ extension tvOSDetailViewController {
         
         var tag = TagModel(title: "Watchlist", query: "realm_watchlist", isActive: talk.onWatchlist)
         TagSyncService.shared.handleStoredTag(&tag)
+      
+        NotificationCenter.default.post(.init(name: .watchlistUpdated, object: true))
     }
     
     @objc private func didSelectWatch() {
@@ -392,7 +394,7 @@ extension tvOSDetailViewController {
         var tag = TagModel(title: "Confinue watching", query: "realm_continue", isActive: false)
         TagSyncService.shared.handleStoredTag(&tag)
         
-        self.coordinator?.reloadCollection()
+        NotificationCenter.default.post(.init(name: .continueWatchingUpdated, object: true))
     }
     
     private func watchlistImage() -> UIImage? {

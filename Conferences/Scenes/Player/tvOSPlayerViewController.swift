@@ -11,17 +11,17 @@ import AVKit
 
 class tvOSPlayerViewController: AVPlayerViewController, AVPlayerViewControllerDelegate {
 
-    weak var coordinator: MainCoordinator?
+    weak var coordinator: ConferencesCoordinator?
+    var mode: ConferencesCoordinatorMode?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         self.delegate = self
     }
 
 
     func playerViewControllerWillBeginDismissalTransition(_ playerViewController: AVPlayerViewController) {
-        coordinator?.reloadCollection()
+        NotificationCenter.default.post(.init(name: .continueWatchingUpdated, object: true))
     }
 }

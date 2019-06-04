@@ -9,12 +9,26 @@
 import UIKit
 import AVKit
 
-final class MainCoordinator {
-    let tabBarController: UITabBarController
-    private var navigationController: UINavigationController
-    private var playbackViewModel: PlaybackViewModel?
+enum ConferencesCoordinatorMode {
+    case allConferences
+    case watchList
+    case continueWatching
+}
+
+final class ConferencesCoordinator: Coordinator {
+    private var mode: ConferencesCoordinatorMode
     
-    private lazy var vcList: tvOSCollectionViewController = {
+    lazy var vc: UIViewController = {
+        let navigationController = UINavigationController(rootViewController: vcList)
+        
+        return navigationController
+    }()
+    
+    lazy var navigationController: UINavigationController = {
+        return (vc as! UINavigationController)
+    }()
+    
+    lazy var vcList: tvOSCollectionViewController = {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset        = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         layout.itemSize            = CGSize(width: tvOSTalkViewCell.THUMB_WIDTH * 1.5, height: 375)
@@ -22,11 +36,28 @@ final class MainCoordinator {
         layout.minimumLineSpacing  = 50
         layout.scrollDirection     = .vertical
         
-        var vc = tvOSCollectionViewController(collectionViewLayout: layout)
+        var vc = tvOSCollectionViewController(collectionViewLayout: layout, mode: self.mode)
         vc.coordinator = self
+        
+        let fontAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 32.0)]
+        UITabBarItem.appearance().setTitleTextAttributes(fontAttributes, for: .normal)
+        
+        switch self.mode {
+        case .allConferences:
+            vc.title = "Conferences"
+            vc.tabBarItem = UITabBarItem(title: "Conferences", image: nil, selectedImage: nil)
+        case .watchList:
+            vc.title = "Watch List"
+            vc.tabBarItem = UITabBarItem(title: "Watch List", image: nil, selectedImage: nil)
+        case .continueWatching:
+            vc.title = "Continue Watching"
+            vc.tabBarItem = UITabBarItem(title: "Continue Watching", image: nil, selectedImage: nil)
+        }
         
         return vc
     }()
+    
+    private var playbackViewModel: PlaybackViewModel?
     
     private lazy var vcDetail: tvOSDetailViewController = {
         var vc = tvOSDetailViewController()
@@ -40,6 +71,7 @@ final class MainCoordinator {
         var vc = tvOSPlayerViewController()
         
         vc.coordinator = self
+        vc.mode        = mode
         
         return vc
     }()
@@ -51,19 +83,12 @@ final class MainCoordinator {
         
         return vc
     }()
-
-    init() {
-        self.tabBarController     = UITabBarController()
-        self.navigationController = UINavigationController()
+    
+    init(mode: ConferencesCoordinatorMode = .allConferences) {
+        self.mode = mode
     }
 
     func start() {
-        self.tabBarController.tabBar.tintColor    = .primaryText
-        self.tabBarController.tabBar.barTintColor = .elementBackground
-        
-        self.navigationController.setViewControllers([vcList], animated: true)
-        
-        self.tabBarController.setViewControllers([navigationController], animated: false)
     }
     
     func showTalkDetails(talk: TalkModel) {
@@ -103,17 +128,11 @@ final class MainCoordinator {
         talk.initializeProgress()
         self.playTalkFromCurrentPosition(talk: talk)
     }
-    
+  
     private func playTalkWithOptions(talk: TalkModel) {
         vcPlayOptions.render(talk: talk)
         navigationController.pushViewController(vcPlayOptions, animated: true)
     }
     
-}
-
-extension MainCoordinator {
-    func reloadCollection() {
-        vcList.reloadTableView()
-    }
 }
 

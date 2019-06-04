@@ -15,11 +15,12 @@
 		EB142F7C2288A50C00735579 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB142F7B2288A50C00735579 /* Assets.xcassets */; };
 		EB142F872288A50C00735579 /* ConferencesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB142F862288A50C00735579 /* ConferencesTests.swift */; };
 		EB1436222288A74000636B13 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1436212288A73F00636B13 /* AppCoordinator.swift */; };
-		EB1436252288A7C400636B13 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1436232288A7C300636B13 /* MainCoordinator.swift */; };
+		EB1436252288A7C400636B13 /* ConferencesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1436232288A7C300636B13 /* ConferencesCoordinator.swift */; };
 		EB1436262288A7C400636B13 /* Styleguide.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1436242288A7C400636B13 /* Styleguide.swift */; };
 		EB14362D2288A85800636B13 /* TalkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB14362B2288A85800636B13 /* TalkService.swift */; };
 		EB14362E2288A85800636B13 /* LoggingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB14362C2288A85800636B13 /* LoggingHelper.swift */; };
 		EB4A09022293416700684436 /* Pods_Conferences.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB4A09012293416700684436 /* Pods_Conferences.framework */; };
+		EB4AAEFA22A6DB7500030C96 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4AAEF922A6DB7500030C96 /* Notification.swift */; };
 		EB5954FB22935B1D0053922B /* ConferencesCoreTV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB5954FA22935B1D0053922B /* ConferencesCoreTV.framework */; };
 		EB5954FC22935B2E0053922B /* ConferencesCoreTV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB5954FA22935B1D0053922B /* ConferencesCoreTV.framework */; };
 		EB5954FD22935B2E0053922B /* ConferencesCoreTV.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EB5954FA22935B1D0053922B /* ConferencesCoreTV.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -29,6 +30,8 @@
 		EB6610272291D00000A0957B /* AVAsset+AsyncHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6610222291CFFF00A0957B /* AVAsset+AsyncHelpers.swift */; };
 		EB6610292291D00000A0957B /* AVPlayer+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6610242291CFFF00A0957B /* AVPlayer+Validation.swift */; };
 		EB66102A2291D00000A0957B /* String+CMTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6610252291D00000A0957B /* String+CMTime.swift */; };
+		EB67E16022A451B30071FE8D /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB67E15F22A451B30071FE8D /* MainTabBarController.swift */; };
+		EB67E16322A452530071FE8D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB67E16222A452530071FE8D /* Coordinator.swift */; };
 		EBA8AAB922984BBB00548C91 /* tvOSPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBA8AAB822984BBB00548C91 /* tvOSPlayerViewController.swift */; };
 		EBDBA9E52288A8F3006B6861 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDBA9E22288A8F3006B6861 /* APIClient.swift */; };
 		EBDBA9E62288A8F3006B6861 /* APIClient+Conference.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDBA9E32288A8F3006B6861 /* APIClient+Conference.swift */; };
@@ -100,11 +103,12 @@
 		EB142F862288A50C00735579 /* ConferencesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferencesTests.swift; sourceTree = "<group>"; };
 		EB142F882288A50C00735579 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB1436212288A73F00636B13 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
-		EB1436232288A7C300636B13 /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; wrapsLines = 0; };
+		EB1436232288A7C300636B13 /* ConferencesCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConferencesCoordinator.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		EB1436242288A7C400636B13 /* Styleguide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Styleguide.swift; sourceTree = "<group>"; };
 		EB14362B2288A85800636B13 /* TalkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TalkService.swift; sourceTree = "<group>"; };
 		EB14362C2288A85800636B13 /* LoggingHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggingHelper.swift; sourceTree = "<group>"; };
 		EB4A09012293416700684436 /* Pods_Conferences.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Conferences.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB4AAEF922A6DB7500030C96 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		EB5954FA22935B1D0053922B /* ConferencesCoreTV.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ConferencesCoreTV.framework; sourceTree = "<group>"; };
 		EB66101A2291CD3300A0957B /* YoutubeFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeFetcher.swift; sourceTree = "<group>"; };
 		EB66101B2291CD3300A0957B /* VimeoFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VimeoFetcher.swift; sourceTree = "<group>"; };
@@ -112,6 +116,8 @@
 		EB6610222291CFFF00A0957B /* AVAsset+AsyncHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVAsset+AsyncHelpers.swift"; sourceTree = "<group>"; };
 		EB6610242291CFFF00A0957B /* AVPlayer+Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVPlayer+Validation.swift"; sourceTree = "<group>"; };
 		EB6610252291D00000A0957B /* String+CMTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+CMTime.swift"; sourceTree = "<group>"; };
+		EB67E15F22A451B30071FE8D /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		EB67E16222A452530071FE8D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		EBA8AAB822984BBB00548C91 /* tvOSPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tvOSPlayerViewController.swift; sourceTree = "<group>"; };
 		EBDBA9E22288A8F3006B6861 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		EBDBA9E32288A8F3006B6861 /* APIClient+Conference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "APIClient+Conference.swift"; sourceTree = "<group>"; };
@@ -197,12 +203,13 @@
 		EB142F732288A50A00735579 /* Conferences */ = {
 			isa = PBXGroup;
 			children = (
+				EB67E16122A452270071FE8D /* Protocol */,
 				EB6610202291CFF400A0957B /* PlayerUI */,
 				EBDBAA032288AA28006B6861 /* Scenes */,
 				EB1436272288A7F100636B13 /* Core */,
 				EB1436212288A73F00636B13 /* AppCoordinator.swift */,
 				EB142F742288A50A00735579 /* AppDelegate.swift */,
-				EB1436232288A7C300636B13 /* MainCoordinator.swift */,
+				EB1436232288A7C300636B13 /* ConferencesCoordinator.swift */,
 				EB1436242288A7C400636B13 /* Styleguide.swift */,
 				EB142F762288A50A00735579 /* ViewController.swift */,
 				EB142F782288A50A00735579 /* Main.storyboard */,
@@ -287,6 +294,14 @@
 			path = PlayerUI;
 			sourceTree = "<group>";
 		};
+		EB67E16122A452270071FE8D /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				EB67E16222A452530071FE8D /* Coordinator.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		EBA8AAB622984B8700548C91 /* Player */ = {
 			isa = PBXGroup;
 			children = (
@@ -314,6 +329,7 @@
 				EBDBAA072288AA54006B6861 /* Shared */,
 				EBDBAA052288AA44006B6861 /* List */,
 				EBDBAA042288AA32006B6861 /* Detail */,
+				EB67E15F22A451B30071FE8D /* MainTabBarController.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -363,6 +379,7 @@
 				EBDBAA202288AB0B006B6861 /* UIImage.swift */,
 				EBDBAA1F2288AB0B006B6861 /* UIView.swift */,
 				EBFF916E2298B3F800515031 /* UIColor.swift */,
+				EB4AAEF922A6DB7500030C96 /* Notification.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -573,7 +590,8 @@
 			files = (
 				EBDBA9F82288A963006B6861 /* ImageDownloadCenter.swift in Sources */,
 				EB1436222288A74000636B13 /* AppCoordinator.swift in Sources */,
-				EB1436252288A7C400636B13 /* MainCoordinator.swift in Sources */,
+				EB67E16322A452530071FE8D /* Coordinator.swift in Sources */,
+				EB1436252288A7C400636B13 /* ConferencesCoordinator.swift in Sources */,
 				EBDBA9F22288A923006B6861 /* VideoSourceModel.swift in Sources */,
 				EB01FE67229C6387005436F2 /* TalkPlayOptionsViewController.swift in Sources */,
 				EBDBAA1C2288AAE3006B6861 /* tvOSTalkViewCell.swift in Sources */,
@@ -581,6 +599,7 @@
 				EBDBAA002288A995006B6861 /* TagSyncService.swift in Sources */,
 				EBDBA9F92288A963006B6861 /* CurrentlyWatchingModel.swift in Sources */,
 				EBDBAA222288AB0B006B6861 /* UIView.swift in Sources */,
+				EB4AAEFA22A6DB7500030C96 /* Notification.swift in Sources */,
 				EB66101D2291CD3300A0957B /* VimeoFetcher.swift in Sources */,
 				EBDBA9E62288A8F3006B6861 /* APIClient+Conference.swift in Sources */,
 				EB66102A2291D00000A0957B /* String+CMTime.swift in Sources */,
@@ -609,6 +628,7 @@
 				EBDBA9F12288A923006B6861 /* ConferenceModel.swift in Sources */,
 				EB6610292291D00000A0957B /* AVPlayer+Validation.swift in Sources */,
 				EBDBAA162288AAC3006B6861 /* ListViewDataSource.swift in Sources */,
+				EB67E16022A451B30071FE8D /* MainTabBarController.swift in Sources */,
 				EB66101C2291CD3300A0957B /* YoutubeFetcher.swift in Sources */,
 				EBDBAA232288AB0B006B6861 /* UIImage.swift in Sources */,
 				EBDBAA212288AB0B006B6861 /* StringProtocol.swift in Sources */,

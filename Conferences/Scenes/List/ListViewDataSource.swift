@@ -9,26 +9,45 @@
 import UIKit
 
 protocol ListViewDataSourceDelegate: class {
-    func didSelectTalk(_ talk: TalkModel)
     func reload()
 }
 
 class ListViewDataSource: NSObject {
     
     weak var delegate: ListViewDataSourceDelegate?
+    
+    var backupConferences: [ConferenceModel] = []
 
     var conferences: [ConferenceModel] = [] {
         didSet {
             DispatchQueue.main.async {
-                if let talk = self.conferences.first?.talks.first,
-                    let window = UIApplication.shared.keyWindow,
-                    window.traitCollection.horizontalSizeClass == .regular {
-                    self.delegate?.didSelectTalk(talk)
-                }
-
                 self.delegate?.reload()
             }
         }
+    }
+    
+    func filterByWatchlist() {
+        conferences = backupConferences.map {
+            var c = $0
+            c.talks = $0.talks.filter { $0.onWatchlist }
+            
+            return c
+        }
+        .filter { !($0.talks.isEmpty) }
+    }
+    
+    func filterByContinueWatching() {
+        conferences = backupConferences.map {
+            var c = $0
+            c.talks = $0.talks.filter { !$0.watched && ($0.progress?.relativePosition ?? 0) > 0 }
+            
+            return c
+        }
+        .filter { !($0.talks.isEmpty) }
+    }
+    
+    func restoreBackup() {
+        conferences = backupConferences
     }
 }
 

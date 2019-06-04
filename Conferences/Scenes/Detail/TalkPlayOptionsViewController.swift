@@ -10,7 +10,7 @@ import UIKit
 
 class TalkPlayOptionsViewController: UIViewController {
     
-    weak var coordinator: MainCoordinator?
+    weak var coordinator: ConferencesCoordinator?
     var currentTalk: TalkModel?
     
     private let BUTTON_HEIGHT: CGFloat    = 70
