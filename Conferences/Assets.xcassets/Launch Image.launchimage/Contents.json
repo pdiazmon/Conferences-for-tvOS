@@ -3,7 +3,7 @@
     {
       "orientation" : "landscape",
       "idiom" : "tv",
-      "filename" : "Icon-121.png",
+      "filename" : "conferences@3840x2160.png",
       "extent" : "full-screen",
       "minimum-system-version" : "11.0",
       "scale" : "2x"
@@ -11,7 +11,7 @@
     {
       "orientation" : "landscape",
       "idiom" : "tv",
-      "filename" : "Icon-1024.png",
+      "filename" : "conferences@1920x1080.png",
       "extent" : "full-screen",
       "minimum-system-version" : "9.0",
       "scale" : "1x"
