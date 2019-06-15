@@ -1,6 +1,6 @@
 # Conferences-for-tvOS
 <p align="center">
-    <img alt="Conferences.digital" src=".github/github_banner.png" width="100%">
+    <img alt="Conferences.digital" src=".github/conferences@1920x720.png" width="100%">
 </p>
 <p align="center">
 <a href="">
